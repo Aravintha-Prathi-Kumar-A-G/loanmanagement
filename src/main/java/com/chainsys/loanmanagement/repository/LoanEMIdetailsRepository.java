@@ -2,7 +2,8 @@ package com.chainsys.loanmanagement.repository;
 
 import java.util.List;
 import org.springframework.data.repository.CrudRepository;
-import com.chainsys.loanmanagement.pojo.LoanEMIdetails;
+
+import com.chainsys.loanmanagement.model.LoanEMIdetails;
 
 public interface LoanEMIdetailsRepository extends CrudRepository <LoanEMIdetails,Integer>{
 	LoanEMIdetails findById (int id);

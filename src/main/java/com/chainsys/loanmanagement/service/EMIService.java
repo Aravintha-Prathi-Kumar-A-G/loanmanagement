@@ -3,27 +3,27 @@ package com.chainsys.loanmanagement.service;
 import java.util.List;
 import org.springframework.beans.factory.annotation.Autowired;
 
-import com.chainsys.loanmanagement.pojo.LoanEMIdetails;
+import com.chainsys.loanmanagement.model.LoanEMIdetails;
 import com.chainsys.loanmanagement.repository.LoanEMIdetailsRepository;
 
 
 public class EMIService {
 	 @Autowired
-	 private LoanEMIdetailsRepository  loemiobj;
+	 private LoanEMIdetailsRepository  loanemirepo;
 	   
-	 public List<LoanEMIdetails> getloanDetails() {
-	        List<LoanEMIdetails> loemiList = loemiobj.findAll();
+	 public List<LoanEMIdetails> getEmiDetails() {
+	        List<LoanEMIdetails> loemiList = loanemirepo.findAll();
 	        return loemiList;
 	    }
-	    public LoanEMIdetails save(LoanEMIdetails loemidet) {
-	        return loemiobj.save(loemidet);
+	    public LoanEMIdetails saveEmi(LoanEMIdetails loanemidet) {
+	        return loanemirepo.save(loanemidet);
 	    }
 
-	    public LoanEMIdetails findById(int id) {
-	        return loemiobj.findById(id);
+	    public LoanEMIdetails findEmiById(int id) {
+	        return loanemirepo.findById(id);
 	    }
-	    public void deleteById(int id) {
-	    	loemiobj.deleteById(id);
+	    public void deleteEmiById(int id) {
+	    	loanemirepo.deleteById(id);
 	    }
 
 }

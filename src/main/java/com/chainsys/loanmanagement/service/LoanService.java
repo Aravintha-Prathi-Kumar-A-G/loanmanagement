@@ -5,28 +5,28 @@ import java.util.List;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
-import com.chainsys.loanmanagement.pojo.Loan;
+import com.chainsys.loanmanagement.model.Loan;
 import com.chainsys.loanmanagement.repository.LoanRepository;
 
 @Service
 public class LoanService {
 	
 	 @Autowired
-	 private LoanRepository  loanobj;
+	 private LoanRepository  loanrepo;
 	   
-	 public List<Loan> getaboutLoan() {
-	        List<Loan> loList =loanobj.findAll();
-	        return loList;
+	 public List<Loan> getLoan() {
+	        List<Loan> loanList =loanrepo.findAll();
+	        return loanList;
 	    }
-	    public Loan save(Loan loan1) {
-	        return loanobj.save(loan1);
+	    public Loan saveLoan(Loan loan) {
+	        return loanrepo.save(loan);
 	    }
 
-	    public Loan findById(int id) {
-	        return loanobj.findById(id);
+	    public Loan findLoanById(int id) {
+	        return loanrepo.findById(id);
 	    }
-	    public void deleteById(int id) {
-	        loanobj.deleteById(id);
+	    public void deleteLoanById(int id) {
+	    	loanrepo.deleteById(id);
 	    }
 
 }
