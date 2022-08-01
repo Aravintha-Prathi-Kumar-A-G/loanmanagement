@@ -14,7 +14,7 @@ public class LoanService {
 	 @Autowired
 	 private LoanRepository  loanrepo;
 	   
-	 public List<Loan> getLoan() {
+	 public List<Loan> getAllLoan() {
 	        List<Loan> loanList =loanrepo.findAll();
 	        return loanList;
 	    }
