@@ -11,7 +11,7 @@
 <body>
 <div id="root">
         <div id="form">
-            <form:form action="addloandetails" method="post" modelAttribute="updateloandetails">
+            <form:form action="updateloandetails" method="post" modelAttribute="loandetailsupdate">
                 
                 <div>
                 User ID :<form:input path="userId" placeholder="enter User ID"/>
@@ -29,6 +29,10 @@
                 Loan Amount : <form:input  path="loanAmount" placeholder="Enter Loan Amount"/>
                 </div>
                 <br>
+                 <div>
+                Total  Amount : <form:input  path="totalAmount" placeholder="Enter Total Amount"/>
+                </div>
+                <br>
                 <div>
                 No of EMI's : <form:input path="noOfEmis" placeholder="no of emi's on Month" />
                 </div>
@@ -39,10 +43,14 @@
                 <br>
                  <div>
                EMI Paid Date  : <form:input type="date" path="emiPaid"   placeholder="enter EMI Paid Date " />
+               </div>
+                <br>
+                 <div>
+               No Of EMI's Paid: <form:input  path="noOfEmiPaid" placeholder="Enter no of emi's paid in month" />
                 </div>
                 <br>
                 <div>
-               EMI Status Paid or Not : <form:input  path="emiPending" placeholder="EMI Pending Status" />
+               No Of EMI's Pending: <form:input  path="noOfEmiPending" placeholder="Enter no of emi's pending in month" />
                 </div>
                 <br>
                  <div>

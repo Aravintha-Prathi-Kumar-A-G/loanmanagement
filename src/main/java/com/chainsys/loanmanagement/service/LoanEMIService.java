@@ -2,28 +2,28 @@ package com.chainsys.loanmanagement.service;
 
 import java.util.List;
 import org.springframework.beans.factory.annotation.Autowired;
-
+import org.springframework.stereotype.Service;
 import com.chainsys.loanmanagement.model.LoanEMIdetails;
 import com.chainsys.loanmanagement.repository.LoanEMIdetailsRepository;
 
-
-public class EMIService {
+@Service
+public class LoanEMIService {
 	 @Autowired
-	 private LoanEMIdetailsRepository  loanemirepo;
+	 private LoanEMIdetailsRepository  loanemi;
 	   
 	 public List<LoanEMIdetails> getEmiDetails() {
-	        List<LoanEMIdetails> loemiList = loanemirepo.findAll();
-	        return loemiList;
+	        List<LoanEMIdetails> loanemiList = loanemi.findAll();
+	        return loanemiList;
 	    }
-	    public LoanEMIdetails saveEmi(LoanEMIdetails loanemidet) {
-	        return loanemirepo.save(loanemidet);
+	    public LoanEMIdetails saveEmi(LoanEMIdetails loanemidetails) {
+	        return loanemi.save(loanemidetails);
 	    }
 
 	    public LoanEMIdetails findEmiById(int id) {
-	        return loanemirepo.findById(id);
+	        return loanemi.findById(id);
 	    }
 	    public void deleteEmiById(int id) {
-	    	loanemirepo.deleteById(id);
+	    	loanemi.deleteById(id);
 	    }
 
 }

@@ -19,13 +19,15 @@
 					<th>Loan Amount</th>
 					<th>No of EMI's</th>
 					<th>Due Date</th>
-					<th>EMI paid</th>
-					<th>EMI Pending</th>
+					<th>EMI paid Date</th>
+					<th>No of EMI Paid in Month</th>
+					<th>No of EMI Pending in Month</th>
 					<th>Interest</th>
+					<th>Total Amount</th>
 				</tr>
 			</thead>
 			<tbody>
-				<c:forEach var="loandet" items="${getalllonedetails}">
+				<c:forEach var="loandet" items="${getallloandetails}">
 					<tr>
 						<td>${loandet.userId}</td>
 						<td>${loandet.loanId}</td>
@@ -34,8 +36,10 @@
 						<td>${loandet.noOfEmis}</td>
 						<td>${loandet.dueDate}</td>
 						<td>${loandet.emiPaid}</td>
-						<td>${loandet.emiPending}</td>
+						<td>${loandet.noOfEmiPaid}</td>
+						<td>${loandet.noOfEmiPending}</td>
 						<td>${loandet.interest}</td>
+						<td>${loandet.totalAmount}</td>
 					</tr>
 				</c:forEach>
 			</tbody>

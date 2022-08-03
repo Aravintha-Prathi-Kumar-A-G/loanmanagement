@@ -22,7 +22,7 @@ public class LoanController {
 private LoanService loanservice;
 	
 	@GetMapping("/addloanform")
-	public String userAddForm(Model model)
+	public String loanAddForm(Model model)
 	{
 		Loan loan = new Loan();
 		model.addAttribute("addnewloan",loan);
@@ -30,36 +30,36 @@ private LoanService loanservice;
 	}
 	
 	@PostMapping("/addloan")
-	public String addnewusers(@ModelAttribute("addnewloan") Loan loan)
+	public String addNewLoan(@ModelAttribute("addnewloan") Loan loan)
 	{
 		loanservice.saveLoan(loan);
 		return "redirect:/loan/getallloan";
 	}
 	@GetMapping("/updateloan")
-	public String showUpdateForm(@RequestParam("loanid") int id,Model model)
+	public String loanUpdateForm(@RequestParam("loanid") int id,Model model)
 	{
 		Loan loan=loanservice.findLoanById(id);
 		model.addAttribute("updateloan", loan);
 		return "update-loan-form";
 	}
     @PostMapping("/updateloan")
-	public String updateuser(@ModelAttribute("updateloan") Loan loanid) {
+	public String updateloan(@ModelAttribute("updateloan") Loan loanid) {
     	loanservice.saveLoan(loanid);
 		return "redirect:/loan/getallloan";
 	}
     @GetMapping("/deleteloan")
-   	public String deleteuser(@RequestParam("loanid") int id) {
+   	public String deleteloan(@RequestParam("loanid") int id) {
     	loanservice.deleteLoanById(id);
    		return "redirect:/loan/getallloan";
    	}
        @GetMapping("/findloanbyid")
-   	public String findUserById(@RequestParam("loanid") int id, Model model) {
+   	public String findLoanById(@RequestParam("loanid") int id, Model model) {
     	   Loan loandet= loanservice.findLoanById(id);
        	model.addAttribute("findloanbyid", loandet);
    		return "find-loanby-id";
    	}
        @GetMapping("/getallloan")
-   	public String getAllLoanDetails(Model model)
+   	public String getAllLoan(Model model)
    	{
    		List <Loan> loanlist = loanservice.getAllLoan();
    		model.addAttribute("getallloan", loanlist);

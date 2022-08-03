@@ -29,7 +29,7 @@ public class UserController {
 	}
 	
 	@PostMapping("/adduserdetails")
-	public String addnewusers(@ModelAttribute("adduser") UserDetails user1)
+	public String addNewUsers(@ModelAttribute("adduser") UserDetails user1)
 	{
 		userservice.saveUser(user1);
 		return "redirect:/user/getallusers";
@@ -64,5 +64,9 @@ public class UserController {
    		model.addAttribute("getallusers", userslist);
    		return "get-all-users";
    	}
+       @RequestMapping("/userlogin")
+       public String userLogin() {
+    	   return "loginform";
+       }
 	
 }

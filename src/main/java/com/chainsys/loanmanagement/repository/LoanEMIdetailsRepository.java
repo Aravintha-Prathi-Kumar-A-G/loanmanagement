@@ -5,7 +5,8 @@ import org.springframework.data.repository.CrudRepository;
 
 import com.chainsys.loanmanagement.model.LoanEMIdetails;
 
-public interface LoanEMIdetailsRepository extends CrudRepository <LoanEMIdetails,Integer>{
+public interface LoanEMIdetailsRepository extends CrudRepository <LoanEMIdetails,Integer>
+{
 	LoanEMIdetails findById (int id);
 	LoanEMIdetails save (LoanEMIdetails loemi);
 	void deleteById(int loemi_id);

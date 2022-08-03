@@ -11,11 +11,11 @@ import javax.persistence.Table;
 @Table(name="loan_details")
 public class LoanDetails {
 	@Id
-	@Column(name="user_id")
-	private int userId ;
-	
 	@Column(name="loan_id")
 	private int loanId ;
+	
+	@Column(name="user_id")
+	private int userId ;
 	
 	@Column(name="loan_date")
 	private Date loanDate ;
@@ -32,12 +32,26 @@ public class LoanDetails {
 	@Column(name="emi_paid")
 	private Date emiPaid ;
 	
-	@Column(name="emi_pending")
-	private String emiPending ;
+	@Column(name="no_of_emi_pending")
+	private int noOfEmiPending;
+	
+	@Column(name="no_of_emi_paid") 
+	private int noOfEmiPaid;
 	
 	@Column(name="interest")
 	private float interest;
 	
+	@Column(name="total_amount")
+	private long totalAmount;
+	
+	public long getTotalAmount() {
+		return totalAmount;
+	}
+
+	public void setTotalAmount(long totalAmount) {
+		this.totalAmount = totalAmount;
+	}
+
 	public int getUserId() {
 		return userId;
 	}
@@ -94,12 +108,20 @@ public class LoanDetails {
 		this.emiPaid = emiPaid;
 	}
 
-	public String getEmiPending() {
-		return emiPending;
+	public int getNoOfEmiPending() {
+		return noOfEmiPending;
 	}
 
-	public void setEmiPending(String emiPending) {
-		this.emiPending = emiPending;
+	public void setNoOfEmiPending(int noOfEmiPending) {
+		this.noOfEmiPending = noOfEmiPending;
+	}
+
+	public int getNoOfEmiPaid() {
+		return noOfEmiPaid;
+	}
+
+	public void setNoOfEmiPaid(int noOfEmiPaid) {
+		this.noOfEmiPaid = noOfEmiPaid;
 	}
 
 	public float getInterest() {
@@ -109,8 +131,5 @@ public class LoanDetails {
 	public void setInterest(float interest) {
 		this.interest = interest;
 	}
-
-	
-	
 	
 }

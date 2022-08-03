@@ -16,7 +16,7 @@ public class LoanEMIdetails {
 	private int loanId ;
 	
 	@Column(name="payment_amount")
-	private double paymentAmount;
+	private float paymentAmount;
 	
 	@Column(name="payment_id")
 	private int paymentId ;
@@ -33,14 +33,6 @@ public class LoanEMIdetails {
 
 	public void setLoanId(int loanId) {
 		this.loanId = loanId;
-	}
-
-	public double getPaymentAmount() {
-		return paymentAmount;
-	}
-
-	public void setPaymentAmount(double paymentAmount) {
-		this.paymentAmount = paymentAmount;
 	}
 
 	public int getPaymentId() {
@@ -68,7 +60,13 @@ public class LoanEMIdetails {
 	}
 
 	
-	
+	public float getPaymentAmount() {
+		return paymentAmount;
+	}
+
+	public void setPaymentAmount(float paymentAmount) {
+		this.paymentAmount = paymentAmount;
+	}
 	
 
 }

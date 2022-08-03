@@ -22,40 +22,40 @@ public class LoanDetailsController {
 	private LoanDetailsService loandetservice;
 	
 	@GetMapping("/addloandetailsform")
-	public String userAddForm(Model model)
+	public String loanDetailsAddForm(Model model)
 	{
-		LoanDetails loandet = new LoanDetails();
-		model.addAttribute("addloandetails",loandet);
+		LoanDetails loandetails = new LoanDetails();
+		model.addAttribute("addloandetails",loandetails);
 		return  "add-loandetails-form";
 	}
 	
 	@PostMapping("/addloandetails")
-	public String addnewusers(@ModelAttribute("addloandetails") LoanDetails loandet)
+	public String addNewLoanDetails(@ModelAttribute("addloandetails") LoanDetails loandetails)
 	{
-		loandetservice.saveLoanDetails(loandet);
+		loandetservice.saveLoanDetails(loandetails);
 		return "redirect:/loandetails/getallloandetails";
 	}
-	@GetMapping("/updateloandetails")
-	public String showUpdateForm(@RequestParam("loanid") int id,Model model)
+	@GetMapping("/updateloandetailsform")
+	public String loanDetailsUpdateForm(@RequestParam("loanid") int id,Model model)
 	{
 		LoanDetails loandet=loandetservice.findLoanDetailsById(id);
-		model.addAttribute("updateloandetails", loandet);
+		model.addAttribute("loandetailsupdate", loandet);
 		return "update-loandetails-form";
 	}
     @PostMapping("/updateloandetails")
-	public String updateuser(@ModelAttribute("updateloandetails") LoanDetails loanid) {
+	public String updateLoanDetails(@ModelAttribute("loandetailsupdate") LoanDetails loanid) {
     	loandetservice.saveLoanDetails(loanid);
 		return "redirect:/loandetails/getallloandetails";
 	}
     @GetMapping("/deleteloandetails")
-   	public String deleteuser(@RequestParam("loanid") int id) {
+   	public String deleteLoanDetails(@RequestParam("loanid") int id) {
     	loandetservice.deleteLoanDetailsById(id);
    		return "redirect:/loandetails/getallloandetails";
    	}
        @GetMapping("/findloandetailsbyid")
-   	public String findUserById(@RequestParam("loanid") int id, Model model) {
-    	   LoanDetails loandet= loandetservice.findLoanDetailsById(id);
-       	model.addAttribute("findloandetailsbyid", loandet);
+   	public String findLoanDetailsById(@RequestParam("loanid") int id, Model model) {
+    	   LoanDetails loandetails= loandetservice.findLoanDetailsById(id);
+       	model.addAttribute("findloandetails", loandetails);
    		return "find-loandeteailsby-id";
    	}
        @GetMapping("/getallloandetails")
