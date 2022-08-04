@@ -45,7 +45,7 @@ public class LoanService {
 			Loan loan=findLoanById(id);
 			LoanAndLoanDetailsDTO dto= new LoanAndLoanDetailsDTO();
 			dto.setLoan(loan);
-			List<LoanDetails> loanlist= loandetailsrepository.findbyLoanId(id); // method created in repo in FK
+			List<LoanDetails> loanlist= loandetailsrepository.findByLoanId(id); // method created in repo in FK
 			Iterator<LoanDetails> itr = loanlist.iterator();
 			while(itr.hasNext())
 			{
@@ -60,7 +60,7 @@ public class LoanService {
 	  			Loan loan=findLoanById(id);
 	  			LoanAndLoanEMIdetailsDTO dtoemi= new LoanAndLoanEMIdetailsDTO();
 	  			dtoemi.setLoan(loan);
-	  			List<LoanEMIdetails> loanlist= emidetailsrepository.findByEMIdetailslByLoanId(id); // method created in repo in FK
+	  			List<LoanEMIdetails> loanlist= emidetailsrepository.findEMIdetailsByLoanId(id); // method created in repo in FK
 	  			Iterator<LoanEMIdetails> itr = loanlist.iterator();
 	  			while(itr.hasNext())
 	  			{

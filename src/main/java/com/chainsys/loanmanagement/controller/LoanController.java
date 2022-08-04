@@ -72,14 +72,14 @@ private LoanService loanservice;
     public String getLoanDetails(@RequestParam("loanid") int id,Model model) {
    		LoanAndLoanDetailsDTO dto =loanservice.getLoanAndLoanDetails(id);
         model.addAttribute("getloan" ,dto.getLoan());
-        model.addAttribute("loanlist",dto.getLoanlist());
+        model.addAttribute("loandetails",dto.getLoanlist());
         return "list-loan-loandetails";
     }
 
 	@GetMapping("/getemidetailsbyloan")
     public String getEMIdetails(@RequestParam("loanid") int id,Model model) {
 		LoanAndLoanEMIdetailsDTO dtoemi =loanservice.getLoanAndLoanEMIdetails(id);
-        model.addAttribute("getloanemi" ,dtoemi.getLoan());
+        model.addAttribute("getloan" ,dtoemi.getLoan());
         model.addAttribute("emilist",dtoemi.getEmidetails());
         return "list-loan-emidetails";
     }

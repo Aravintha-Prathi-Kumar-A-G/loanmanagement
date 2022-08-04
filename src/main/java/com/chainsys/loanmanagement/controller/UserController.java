@@ -11,6 +11,8 @@ import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestParam;
 
+import com.chainsys.loanmanagement.dto.LoanAndLoanEMIdetailsDTO;
+import com.chainsys.loanmanagement.dto.UserDetailsAndLoanEMIdetailsDTO;
 import com.chainsys.loanmanagement.dto.UserDetailsLoanDetailsDTO;
 import com.chainsys.loanmanagement.model.UserDetails;
 import com.chainsys.loanmanagement.service.UserDetailsService;
@@ -74,10 +76,18 @@ public class UserController {
        public String getLoanDetailsByUserId(@RequestParam("userid")int id,Model model)
        {
     	   UserDetailsLoanDetailsDTO dto =userservice.getUserDetailsLoanDetails(id);
-           model.addAttribute("getbloodgroup" ,dto.getUserdetails());
-           model.addAttribute("loanlist",dto.getLoanlist());
+           model.addAttribute("getuserdetails" ,dto.getUserdetails());
+           model.addAttribute("loandetails",dto.getLoanlist());
            return "list-userdetails-loandetails";
     	   
+       }
+       
+       @GetMapping("/getemidetailsbyuserid")
+       public String getEMIdetailsByUserId(@RequestParam("userid") int id,Model model) {
+    	   UserDetailsAndLoanEMIdetailsDTO useremidto =userservice.getUserDetailsAndLoanEMIdetails(id);
+           model.addAttribute("getuser" ,useremidto.getUserdetails());
+           model.addAttribute("loanemidetails",useremidto.getLoanemidetails());
+           return "list-userdetails-emidetails-byid";
        }
 	
 }

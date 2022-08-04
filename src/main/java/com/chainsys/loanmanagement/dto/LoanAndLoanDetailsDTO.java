@@ -26,8 +26,8 @@ public class LoanAndLoanDetailsDTO {
 		return loanlist;
 	}
 
-	public void addLoanAndLoanDetailslist(LoanDetails doc) {
-		loanlist.add(doc);
+	public void addLoanAndLoanDetailslist(LoanDetails loandetails) {
+		loanlist.add(loandetails);
 	}
 	
 }

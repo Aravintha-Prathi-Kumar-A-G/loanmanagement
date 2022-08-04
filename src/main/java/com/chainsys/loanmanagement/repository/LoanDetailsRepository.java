@@ -11,6 +11,6 @@ public interface LoanDetailsRepository extends CrudRepository <LoanDetails,Integ
 	void deleteById(int lod_id);
 	List <LoanDetails> findAll();
 	List<LoanDetails> findByUserId(int id);
-	List<LoanDetails> findbyLoanId(int id);
+	List<LoanDetails> findByLoanId(int id);
 
 }

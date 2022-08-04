@@ -11,7 +11,7 @@ public interface LoanEMIdetailsRepository extends CrudRepository <LoanEMIdetails
 	LoanEMIdetails save (LoanEMIdetails loemi);
 	void deleteById(int loemi_id);
 	List <LoanEMIdetails> findAll();
-	List<LoanEMIdetails> findByEMIdetailslByLoanId(int id);
-	List<LoanEMIdetails> findByEMIdetailsByUserId(int id);
+	List<LoanEMIdetails> findEMIdetailsByLoanId(int id);
+	List<LoanEMIdetails> findEMIdetailsByUserId(int id);
 
 }
