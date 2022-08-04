@@ -5,45 +5,60 @@ package com.chainsys.loanmanagement.model;
 import java.sql.Date;
 import javax.persistence.Column;
 import javax.persistence.Entity;
+import javax.persistence.FetchType;
 import javax.persistence.Id;
+import javax.persistence.JoinColumn;
+import javax.persistence.ManyToOne;
 import javax.persistence.Table;
 @Entity
 @Table(name="loan_details")
 public class LoanDetails {
-	@Id
+	
 	@Column(name="loan_id")
 	private int loanId ;
-	
+	@Id
 	@Column(name="user_id")
 	private int userId ;
-	
 	@Column(name="loan_date")
 	private Date loanDate ;
-	
 	@Column(name="loan_amount")
-	private double loanAmount ;
-	
+	private double loanAmount ;	
 	@Column(name="no_of_emis")
 	private int noOfEmis;
-	
 	@Column(name="due_date")
 	private Date dueDate ;
-	
 	@Column(name="emi_paid")
 	private Date emiPaid ;
-	
 	@Column(name="no_of_emi_pending")
 	private int noOfEmiPending;
-	
 	@Column(name="no_of_emi_paid") 
 	private int noOfEmiPaid;
-	
 	@Column(name="interest")
 	private float interest;
-	
 	@Column(name="total_amount")
 	private long totalAmount;
+	@Column(name="loan_status")
+	private String loanStatus;
 	
+//-------------------------------------------------
+	@ManyToOne(fetch=FetchType.LAZY)
+	@JoinColumn(name="user_id",nullable=false,insertable=false,updatable=false)
+	private UserDetails userdetail; // pk class
+	
+//------------------------------------------------------------
+	
+		@ManyToOne(fetch=FetchType.LAZY)
+		@JoinColumn(name="loan_id",nullable =false,insertable =false,updatable =false)
+		private Loan loan; // pk class
+// ------------------------------------------------------------		
+	public String getLoanStatus() {
+		return loanStatus;
+	}
+
+	public void setLoanStatus(String loanStatus) {
+		this.loanStatus = loanStatus;
+	}
+
 	public long getTotalAmount() {
 		return totalAmount;
 	}

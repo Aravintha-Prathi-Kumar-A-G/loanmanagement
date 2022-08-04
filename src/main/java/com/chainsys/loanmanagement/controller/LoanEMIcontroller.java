@@ -35,8 +35,8 @@ public class LoanEMIcontroller {
 		loanemiservice.saveEmi(emidetails);
 		return "redirect:/emi/getallloanemidetails";
 	}
-	@GetMapping("/updateemidetails")
-	public String emiUpdateForm(@RequestParam("loanid") int id,Model model)
+	@GetMapping("/updateemidetailsform")
+	public String emiUpdateForm(@RequestParam("userid") int id,Model model)
 	{
 		LoanEMIdetails loandetails=loanemiservice.findEmiById(id);
 		model.addAttribute("updateemidetails", loandetails);
@@ -48,12 +48,12 @@ public class LoanEMIcontroller {
 		return "redirect:/emi/getallloanemidetails";
 	}
     @GetMapping("/deleteemidetails")
-   	public String deleteEmi(@RequestParam("loanid") int id) {
+   	public String deleteEmi(@RequestParam("userid") int id) {
     	loanemiservice.deleteEmiById(id);
    		return "redirect:/emi/getallloandetails";
    	}
        @GetMapping("/findemidetailsbyid")
-   	public String findEmiById(@RequestParam("loanid") int id, Model model) {
+   	public String findEmiById(@RequestParam("userid") int id, Model model) {
     	   LoanEMIdetails loanemidetails= loanemiservice.findEmiById(id);
        	model.addAttribute("findemidetailsbyid", loanemidetails);
    		return "find-emi-detailsby-id";

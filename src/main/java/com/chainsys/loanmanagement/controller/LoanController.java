@@ -11,6 +11,8 @@ import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestParam;
 
+import com.chainsys.loanmanagement.dto.LoanAndLoanDetailsDTO;
+import com.chainsys.loanmanagement.dto.LoanAndLoanEMIdetailsDTO;
 import com.chainsys.loanmanagement.model.Loan;
 import com.chainsys.loanmanagement.service.LoanService;
 
@@ -66,5 +68,19 @@ private LoanService loanservice;
    		return "get-all-loan";
    	}
 	
+   	@GetMapping("/getloandetailsbyloan")
+    public String getLoanDetails(@RequestParam("loanid") int id,Model model) {
+   		LoanAndLoanDetailsDTO dto =loanservice.getLoanAndLoanDetails(id);
+        model.addAttribute("getloan" ,dto.getLoan());
+        model.addAttribute("loanlist",dto.getLoanlist());
+        return "list-loan-loandetails";
+    }
 
+	@GetMapping("/getemidetailsbyloan")
+    public String getEMIdetails(@RequestParam("loanid") int id,Model model) {
+		LoanAndLoanEMIdetailsDTO dtoemi =loanservice.getLoanAndLoanEMIdetails(id);
+        model.addAttribute("getloanemi" ,dtoemi.getLoan());
+        model.addAttribute("emilist",dtoemi.getEmidetails());
+        return "list-loan-emidetails";
+    }
 }

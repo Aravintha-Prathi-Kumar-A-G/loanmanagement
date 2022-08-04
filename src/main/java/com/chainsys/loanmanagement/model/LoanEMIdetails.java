@@ -1,38 +1,55 @@
 package com.chainsys.loanmanagement.model;
 
-
-
 import java.sql.Date;
 
 import javax.persistence.Column;
 import javax.persistence.Entity;
+import javax.persistence.FetchType;
 import javax.persistence.Id;
+import javax.persistence.JoinColumn;
+import javax.persistence.ManyToOne;
 import javax.persistence.Table;
+
 @Entity
-@Table(name="loan_emi_details")
+@Table(name = "loan_emi_details")
 public class LoanEMIdetails {
+
+	@Column(name = "loan_id")
+	private int loanId;
+	@Column(name = "payment_amount")
+	private int paymentAmount;
+	@Column(name = "payment_id")
+	private int paymentId;
 	@Id
-	@Column(name="loan_id")
-	private int loanId ;
-	
-	@Column(name="payment_amount")
-	private float paymentAmount;
-	
-	@Column(name="payment_id")
-	private int paymentId ;
-	
-	@Column(name="user_id")
-	private int userId ;
-	
-	@Column(name="emi_date")
+	@Column(name = "user_id")
+	private int userId;
+	@Column(name = "emi_date")
 	private Date emiDate;
 	
+//------------------------------------------------------------------------------------------
+	@ManyToOne(fetch=FetchType.LAZY)
+	@JoinColumn(name="loan_id",nullable =false,insertable =false,updatable =false)
+	private Loan loan; // pk class
+	
+//-------------------------------------------------------------------------------------------	
+	@ManyToOne(fetch=FetchType.LAZY)
+	@JoinColumn(name="user_id",nullable =false,insertable =false,updatable =false)
+	private UserDetails userdetails; // pk class
+//------------------------------------------------------------------------------------	
 	public int getLoanId() {
 		return loanId;
 	}
 
 	public void setLoanId(int loanId) {
 		this.loanId = loanId;
+	}
+
+	public int getPaymentAmount() {
+		return paymentAmount;
+	}
+
+	public void setPaymentAmount(int paymentAmount) {
+		this.paymentAmount = paymentAmount;
 	}
 
 	public int getPaymentId() {
@@ -58,15 +75,5 @@ public class LoanEMIdetails {
 	public void setEmiDate(Date emiDate) {
 		this.emiDate = emiDate;
 	}
-
-	
-	public float getPaymentAmount() {
-		return paymentAmount;
-	}
-
-	public void setPaymentAmount(float paymentAmount) {
-		this.paymentAmount = paymentAmount;
-	}
-	
 
 }

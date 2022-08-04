@@ -26,7 +26,7 @@
 						<td>${emidetails.userId}</td>
 						<td>${emidetails.loanId}</td>
 						<td>${emidetails.emiDate}</td>
-						<td>${emidetails.PaymentAmount}</td>
+						<td>${emidetails.paymentAmount}</td>
 						<td>${emidetails.paymentId}</td>
 					</tr>
 				</c:forEach>

@@ -53,6 +53,10 @@
                No Of EMI's Pending: <form:input  path="noOfEmiPending" placeholder="Enter no of emi's pending in month" />
                 </div>
                 <br>
+                <div>
+               Loan Status  : <form:input path="loanStatus"   placeholder="enter  Loan Status " />
+                </div>
+                <br>
                  <div>
                Interest  : <form:input path="interest"   placeholder="enter Interest per Loan " />
                 </div>

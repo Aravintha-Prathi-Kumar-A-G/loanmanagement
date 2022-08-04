@@ -3,10 +3,13 @@ package com.chainsys.loanmanagement.model;
 
 
 import java.sql.Date;
+import java.util.List;
 
 import javax.persistence.Column;
 import javax.persistence.Entity;
+import javax.persistence.FetchType;
 import javax.persistence.Id;
+import javax.persistence.OneToMany;
 import javax.persistence.Table;
 
 @Entity
@@ -51,7 +54,32 @@ public class UserDetails {
 	
 	@Column(name="password")
     private String 	password ;
-    
+
+//------------------------------------------------------------------------
+
+	@OneToMany(mappedBy="userdetail",fetch=FetchType.LAZY)
+	private List<LoanDetails> loandetails ; // LoanDetails (fk class)
+	
+	public List<LoanDetails> getLoandetails() {
+		return loandetails;
+	}
+
+	public void setLoandetails(List<LoanDetails> loandetails) {
+		this.loandetails = loandetails;
+	}
+
+//-----------------------------------------------------------------------
+	@OneToMany(mappedBy="userdetails",fetch=FetchType.LAZY)
+	private List<LoanEMIdetails> loanemidetails ; // LoanEMIdetails (fk class)
+	
+	public List<LoanEMIdetails> getLoanemidetails() {
+		return loanemidetails;
+	}
+
+	public void setLoanemidetails(List<LoanEMIdetails> loanemidetails) {
+		this.loanemidetails = loanemidetails;
+	}
+//---------------------------------------------------------------------------------
 	
 	public int getUserId() {
 		return userId;

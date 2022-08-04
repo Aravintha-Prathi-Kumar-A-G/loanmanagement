@@ -36,7 +36,7 @@ public class LoanDetailsController {
 		return "redirect:/loandetails/getallloandetails";
 	}
 	@GetMapping("/updateloandetailsform")
-	public String loanDetailsUpdateForm(@RequestParam("loanid") int id,Model model)
+	public String loanDetailsUpdateForm(@RequestParam("userid") int id,Model model)
 	{
 		LoanDetails loandet=loandetservice.findLoanDetailsById(id);
 		model.addAttribute("loandetailsupdate", loandet);
@@ -48,12 +48,12 @@ public class LoanDetailsController {
 		return "redirect:/loandetails/getallloandetails";
 	}
     @GetMapping("/deleteloandetails")
-   	public String deleteLoanDetails(@RequestParam("loanid") int id) {
+   	public String deleteLoanDetails(@RequestParam("userid") int id) {
     	loandetservice.deleteLoanDetailsById(id);
    		return "redirect:/loandetails/getallloandetails";
    	}
        @GetMapping("/findloandetailsbyid")
-   	public String findLoanDetailsById(@RequestParam("loanid") int id, Model model) {
+   	public String findLoanDetailsById(@RequestParam("userid") int id, Model model) {
     	   LoanDetails loandetails= loandetservice.findLoanDetailsById(id);
        	model.addAttribute("findloandetails", loandetails);
    		return "find-loandeteailsby-id";

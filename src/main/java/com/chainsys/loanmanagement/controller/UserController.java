@@ -11,6 +11,7 @@ import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestParam;
 
+import com.chainsys.loanmanagement.dto.UserDetailsLoanDetailsDTO;
 import com.chainsys.loanmanagement.model.UserDetails;
 import com.chainsys.loanmanagement.service.UserDetailsService;
 
@@ -67,6 +68,16 @@ public class UserController {
        @RequestMapping("/userlogin")
        public String userLogin() {
     	   return "loginform";
+       }
+       
+       @GetMapping("/getloandetailsbyuserid")
+       public String getLoanDetailsByUserId(@RequestParam("userid")int id,Model model)
+       {
+    	   UserDetailsLoanDetailsDTO dto =userservice.getUserDetailsLoanDetails(id);
+           model.addAttribute("getbloodgroup" ,dto.getUserdetails());
+           model.addAttribute("loanlist",dto.getLoanlist());
+           return "list-userdetails-loandetails";
+    	   
        }
 	
 }

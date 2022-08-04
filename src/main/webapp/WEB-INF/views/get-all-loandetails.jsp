@@ -24,6 +24,7 @@
 					<th>No of EMI Pending in Month</th>
 					<th>Interest</th>
 					<th>Total Amount</th>
+					<th>Loan Status</th>
 				</tr>
 			</thead>
 			<tbody>
@@ -40,6 +41,7 @@
 						<td>${loandet.noOfEmiPending}</td>
 						<td>${loandet.interest}</td>
 						<td>${loandet.totalAmount}</td>
+						<td>${loandet.loanStatus}</td>
 					</tr>
 				</c:forEach>
 			</tbody>
