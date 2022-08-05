@@ -90,4 +90,13 @@ public class UserController {
            return "list-userdetails-emidetails-byid";
        }
 	
+		/*
+		 * @GetMapping("/findbyidpackform") public String findById() { return
+		 * "find-by-packid-form"; }
+		 * 
+		 * @GetMapping("/getpackagebyid") public String
+		 * getPackageById(@RequestParam("packageId") int id, Model model) { TripPackage
+		 * tpack =packService.findById(id); model.addAttribute("getpackbyid",tpack);
+		 * return "find-package-by-id-form"; }
+		 */
 }
