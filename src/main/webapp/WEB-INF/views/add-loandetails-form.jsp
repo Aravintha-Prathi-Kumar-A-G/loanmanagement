@@ -7,6 +7,24 @@
 <head>
 <meta charset="ISO-8859-1">
 <title>Adding Loan Details</title>
+<script type="text/javascript">
+function emiCalculation()
+{
+	var loanAmount = document.getElementById("loanAmount").value;
+	var noOfEMIperMonth = document.getElementById("noOfEmis").value;
+	var interest = document.getElementById("interest").value;
+	var monthlyEMI = document.getElementById("monthlyEMIAmount").value;
+	
+	var monthlyEMI2 =  parseInt(loanAmount) * parseFloat(interest) / parseInt(noOfEMIperMonth);
+	var totalAmount = parseInt(monthlyEMI2) * parseInt(noOfEMIperMonth);
+	
+	document.getElementById("monthlyEMIAmount").value = monthlyEMI2;
+	document.getElementById("totalAmount").value = totalAmount;
+	
+	
+	}
+
+</script>
 </head>
 <body>
  <h3>Loan Details Registration form</h3>
@@ -27,15 +45,15 @@
                 </div>
                 <br>
                 <div>
-                Loan Amount : <form:input  path="loanAmount" placeholder="Enter Loan Amount"/>
-                </div>
+                Loan Amount : <form:input  path="loanAmount" id="loanAmount" name="loanAmount" onchange="emiCalculation()" placeholder="Enter Loan Amount"/>
+                </div> 
                 <br>
                  <div>
-                Total  Amount : <form:input  path="totalAmount" placeholder="Enter Total Amount"/>
+                Total  Amount : <form:input  path="totalAmount" id="totalAmount" name="totalAmount" onchange="emiCalculation(this.form)" placeholder="Enter Total Amount"/>
                 </div>
                 <br>
                 <div>
-                No of EMI's : <form:input path="noOfEmis" placeholder="no of emi's on Month" />
+                No of EMI's : <form:input path="noOfEmis" id="noOfEmis"  name="noOfEmis" onchange="emiCalculation()" placeholder="no of emi's on Month" />
                 </div>
                 <br>
                 <div>
@@ -58,8 +76,12 @@
                Loan Status  : <form:input path="loanStatus"   placeholder="enter  Loan Status " />
                 </div>
                 <br>
+                <div>
+               EMI Amount Per Month  : <form:input path="monthlyEMIAmount" id="monthlyEMIAmount" name="monthlyEMIAmount" onchange="emiCalculation(this.form)" placeholder="emi amount per month " />
+                </div>
+                <br>
                  <div>
-               Interest  : <form:input path="interest"   placeholder="enter Interest per Loan " />
+               Interest  : <form:input path="interest" id="interest"  name="interest" onchange="emiCalculation()" placeholder="enter Interest per Loan " />
                 </div>
                 <br>
                 <div>

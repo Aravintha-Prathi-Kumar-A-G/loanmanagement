@@ -13,6 +13,7 @@ import org.springframework.web.bind.annotation.RequestParam;
 
 import com.chainsys.loanmanagement.model.LoanEMIdetails;
 import com.chainsys.loanmanagement.service.LoanEMIService;
+import com.chainsys.loanmanagement.service.LoanDetailsService;
 
 @Controller
 @RequestMapping("/emi")
@@ -20,7 +21,6 @@ public class LoanEMIcontroller {
 	
 	@Autowired
 	private LoanEMIService loanemiservice;
-	
 	@GetMapping("/addemidetailsform")
 	public String emiDetailsAddForm(Model model)
 	{

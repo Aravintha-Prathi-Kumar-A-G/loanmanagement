@@ -46,6 +46,7 @@
 					<th>No of EMI Paid in Month</th>
 					<th>No of EMI Pending in Month</th>
 					<th>Interest</th>
+					<th>EMI Amount per Month</th>
 					<th>Total Amount</th>
 					<th>Loan Status</th>
 				</tr>
@@ -63,6 +64,7 @@
 						<td>${loandetails.noOfEmiPaid}</td>
 						<td>${loandetails.noOfEmiPending}</td>
 						<td>${loandetails.interest}</td>
+						<td>${loandetails.monthlyEMIAmount}</td>
 						<td>${loandetails.totalAmount}</td>
 						<td>${loandetails.loanStatus}</td>
 					</tr>

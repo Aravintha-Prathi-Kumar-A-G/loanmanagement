@@ -18,9 +18,9 @@ public class LoanEMIdetails {
 	private int loanId;
 	@Column(name = "payment_amount")
 	private int paymentAmount;
+	@Id
 	@Column(name = "payment_id")
 	private int paymentId;
-	@Id
 	@Column(name = "user_id")
 	private int userId;
 	@Column(name = "emi_date")

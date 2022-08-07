@@ -56,7 +56,7 @@ public class LoanDetailsController {
    	public String findLoanDetailsById(@RequestParam("userid") int id, Model model) {
     	   LoanDetails loandetails= loandetservice.findLoanDetailsById(id);
        	model.addAttribute("findloandetails", loandetails);
-   		return "find-loandeteailsby-id";
+   		return "find-loandetailsby-id";
    	}
        @GetMapping("/getallloandetails")
    	public String getAllLoanDetails(Model model)
@@ -65,6 +65,29 @@ public class LoanDetailsController {
    		model.addAttribute("getallloandetails", loandetailslist);
    		return "get-all-loandetails";
    	}
+       
+	/*
+	 * @GetMapping("/loanprocessingstatus") public String
+	 * userApplicationStatus(Model model) { List<LoanDetails> loandetails =
+	 * loandetservice.loanProcessing(); model.addAttribute("loanstatus",
+	 * loandetails); return "loan-current-status"; }
+	 * 
+	 * @GetMapping("/loanrejectedlist") public String epassApprovedStatus(Model
+	 * model) { List<LoanDetails> loandetails = loandetservice.loanRejected();
+	 * model.addAttribute("loanstatus", loandetails); return "loan-current-status";
+	 * }
+	 * 
+	 * @GetMapping("/loanapplied") public String loanAppliedStatus(Model model) {
+	 * List<LoanDetails> loandetails = loandetservice.loanApplied();
+	 * model.addAttribute("loanstatus", loandetails); return "loan-current-status";
+	 * }
+	 * 
+	 * @GetMapping("/loanapprovedlist") public String loanApprovedStatus(Model
+	 * model) { List<LoanDetails> loandetails = loandetservice.loanApproved();
+	 * model.addAttribute("loanstatus", loandetails); return "loan-current-status";
+	 * }
+	 */
+   
 	
 }
 

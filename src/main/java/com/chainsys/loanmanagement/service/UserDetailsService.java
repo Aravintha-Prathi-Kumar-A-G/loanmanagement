@@ -9,7 +9,6 @@ import org.springframework.stereotype.Service;
 
 import com.chainsys.loanmanagement.dto.UserDetailsAndLoanEMIdetailsDTO;
 import com.chainsys.loanmanagement.dto.UserDetailsLoanDetailsDTO;
-import com.chainsys.loanmanagement.model.Loan;
 import com.chainsys.loanmanagement.model.LoanDetails;
 import com.chainsys.loanmanagement.model.LoanEMIdetails;
 import com.chainsys.loanmanagement.model.UserDetails;

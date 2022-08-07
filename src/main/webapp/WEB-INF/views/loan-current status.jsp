@@ -1,15 +1,33 @@
 <%@ page language="java" contentType="text/html; charset=ISO-8859-1"
-    pageEncoding="ISO-8859-1"%>
+	pageEncoding="ISO-8859-1"%>
 <%@ taglib prefix="form" uri="http://www.springframework.org/tags/form"%>
 <%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core"%>
 <!DOCTYPE html>
 <html>
 <head>
 <meta charset="ISO-8859-1">
-<title>List All Loan Details</title>
+<title>Loan Application Status</title>
+<style>
+h1, h2, h3 {
+	text-align: center;
+}
+table, th, td {
+	border: 2px solid black;
+	border-collapse: collapse;
+	margin-left: auto;
+	margin-right: auto;
+	text-align: center;
+}
+* {
+	text-align: center;
+}
+</style>
 </head>
-<body style="background-color: powderblue;">
-	<div id="table root">
+<body>
+	<h1>Online Management System</h1>
+	<hr />
+	<h2>Loan Application Status</h2>
+	<div id="application status">
 		<table>
 			<thead>
 				<tr>
@@ -29,7 +47,7 @@
 				</tr>
 			</thead>
 			<tbody>
-				<c:forEach var="loandet" items="${getallloandetails}">
+				<c:forEach var="loandet" items="${loanstatus}">
 					<tr>
 						<td>${loandet.userId}</td>
 						<td>${loandet.loanId}</td>
@@ -49,5 +67,17 @@
 			</tbody>
 		</table>
 	</div>
+	<%-- <h3>Action</h3>
+	<form:form action="actionrequest" method="post"
+		modelAttribute="epassForm">
+		<div>
+			EpassId :
+			<form:input path="epassId" name="epassId" />
+		</div>
+		<div>
+			<form:hidden path="approvalStatus" />
+		</div>
+		<input type="submit" value="Submit" />
+	</form:form> --%>
 </body>
 </html>

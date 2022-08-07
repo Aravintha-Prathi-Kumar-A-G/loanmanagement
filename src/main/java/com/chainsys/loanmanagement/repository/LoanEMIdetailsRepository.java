@@ -13,5 +13,5 @@ public interface LoanEMIdetailsRepository extends CrudRepository <LoanEMIdetails
 	List <LoanEMIdetails> findAll();
 	List<LoanEMIdetails> findEMIdetailsByLoanId(int id);
 	List<LoanEMIdetails> findEMIdetailsByUserId(int id);
-
+	
 }

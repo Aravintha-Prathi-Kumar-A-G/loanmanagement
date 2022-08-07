@@ -57,6 +57,10 @@
                Loan Status  : <form:input path="loanStatus"   placeholder="enter  Loan Status " />
                 </div>
                 <br>
+                <div>
+               EMI Amount Per Month  : <form:input path="monthlyEMIAmount"   placeholder="emi amount per month " />
+                </div>
+                <br>
                  <div>
                Interest  : <form:input path="interest"   placeholder="enter Interest per Loan " />
                 </div>

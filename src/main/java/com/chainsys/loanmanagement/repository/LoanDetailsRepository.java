@@ -12,5 +12,7 @@ public interface LoanDetailsRepository extends CrudRepository <LoanDetails,Integ
 	List <LoanDetails> findAll();
 	List<LoanDetails> findByUserId(int id);
 	List<LoanDetails> findByLoanId(int id);
+	
+	// List<LoanDetails> findByLoanApprovalStatus(String status);
 
 }
