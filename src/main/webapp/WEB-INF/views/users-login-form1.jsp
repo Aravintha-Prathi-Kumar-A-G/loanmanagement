@@ -7,10 +7,28 @@
 <head>
 <meta charset="ISO-8859-1">
 <title>Users Login Form | Loan Management System</title> 
-
+<style type="text/css">
+body {
+    background-image:
+        url("https://media.istockphoto.com/photos/person-holds-a-smartphone-with-mobile-banking-icons-projection-picture-id1304484797?b=1&k=20&m=1304484797&s=170667a&w=0&h=Z8RFNCQoyUz1lXq9eZK55DuwA8TPRcPcIAJDR7HDjpk=");
+     height: 768px;
+    width: 1366px; 
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+    position: relative;
+}
+</style>
+<style>
+*{
+text-align: center;
+}
+</style>
 </head>
-<body style="background-color:#e91515; color:white;">
-<div align="center">
+
+<body >
+
+<div >
 	<form:form action="userpage" method="post" modelAttribute="signin">
 				<div>
 					<label for="userId"> User Id</label>
@@ -28,14 +46,8 @@
 					<form:button>login</form:button>
 					
 				</div>
-				
-				<a href="new register">sign up</a>
+				<a href="/user/adduserform">sign up</a>
 				</form:form>
 </div>
-<div align="center">
-     <div>${head}</div>
-	 <div>${title}</div>
-     <div>${message}</div>
-     </div>
 </body>
 </html>

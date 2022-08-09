@@ -27,29 +27,29 @@ import com.chainsys.loanmanagement.repository.LoanDetailsRepository;
 	    	loandetailsrepo.deleteById(id);
 	    }
 
-	 /*   public List<LoanDetails> findByApprovalStatus(String status) {
-			List<LoanDetails> statusList = loandetailsrepo.findByLoanApprovalStatus(status);
+	   public List<LoanDetails> findByLoanStatus(String status) {
+			List<LoanDetails> statusList = loandetailsrepo.findByLoanStatus(status);
 			return statusList;
 		}
 	    
 	    public List<LoanDetails> loanProcessing() {
 			String status = "Processing";
-			return loandetailsrepo.findByLoanApprovalStatus(status);
+			return loandetailsrepo.findByLoanStatus(status);
 		}
 		
 		public List<LoanDetails> loanApproved() {
 			String status = "Approved";
-			return loandetailsrepo.findByLoanApprovalStatus(status);
+			return loandetailsrepo.findByLoanStatus(status);
 		}
 		
 		public List<LoanDetails> loanApplied() {
 			String status = "Applied";
-			return loandetailsrepo.findByLoanApprovalStatus(status);
+			return loandetailsrepo.findByLoanStatus(status);
 		}
 		
 		public List<LoanDetails> loanRejected() {
 			String status = "Rejected";
-			return loandetailsrepo.findByLoanApprovalStatus(status);
-		} */
+			return loandetailsrepo.findByLoanStatus(status);
+		} 
 	    
 }

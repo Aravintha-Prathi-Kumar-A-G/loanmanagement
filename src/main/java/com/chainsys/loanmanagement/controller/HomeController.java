@@ -14,7 +14,7 @@ import com.chainsys.loanmanagement.service.UserDetailsService;
 
 @Controller
 @RequestMapping("/home")
-public class IndexController {
+public class HomeController {
 	@Autowired
 	private UserDetailsService userdetailservice;
 
@@ -35,6 +35,18 @@ public class IndexController {
 	        return "loanmanagement-index";
 	    }
 	    
+	    @GetMapping("/customerform")
+	    public String customerPage(Model model)
+	    {
+	    	return "customer-form";
+	    }
+	    
+	    @GetMapping("/adminpage")
+	    public String adminPage()
+	    {
+	    	return "admin-form";
+	    }
+	    
 	    @PostMapping("/userpage")
 		public String userPage(@ModelAttribute("signin") SignIn signin, Model model) {
 			UserDetails userdetails = userdetailservice.findUserById(signin.getUserId());
@@ -42,10 +54,10 @@ public class IndexController {
 			{
 				if (userdetails.getRole().equalsIgnoreCase("user")) 
 				{
-					return "redirect:/user/getallusers";
+					return "redirect:/home/customerform";
 
 				} else if (userdetails.getRole().equalsIgnoreCase("admin")) {
-					return "redirect:/user/getallusers";
+					return "redirect:/home/adminpage";
 				}
 			} else {
 				model.addAttribute("message", "Somthing Wrong ");

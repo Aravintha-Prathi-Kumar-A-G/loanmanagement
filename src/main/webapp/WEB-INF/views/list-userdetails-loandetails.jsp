@@ -6,7 +6,19 @@
 <html>
 <head>
 <meta charset="ISO-8859-1">
-<title>List User Details and Loa details By User ID </title>
+<title>List User Details and Loan details By User ID </title>
+<style>
+h1, h2, h3 {
+    text-align: center;
+}
+table, th, td {
+    border: 2px solid black;
+    border-collapse: collapse;
+    margin-left: auto;
+    margin-right: auto;
+    text-align: center;
+}
+</style>
 </head>
 <body>
 <div id="root">

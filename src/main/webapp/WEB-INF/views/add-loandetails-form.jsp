@@ -27,7 +27,7 @@ function emiCalculation()
 </script>
 </head>
 <body>
- <h3>Loan Details Registration form</h3>
+ <h3>Customers Loan Details Applying form</h3>
     <div id="root">
         <div id="form">
             <form:form action="addloandetails" method="post" modelAttribute="addloandetails">
@@ -41,7 +41,7 @@ function emiCalculation()
                 </div>
                 <br>
                 <div>
-                LOAN Issue Date : <form:input type="date" path="loanDate" placeholder="enter loan issue date" />
+                Loan Apply Date : <form:input type="date" path="loanDate" />
                 </div>
                 <br>
                 <div>
@@ -49,43 +49,51 @@ function emiCalculation()
                 </div> 
                 <br>
                  <div>
-                Total  Amount : <form:input  path="totalAmount" id="totalAmount" name="totalAmount" onchange="emiCalculation(this.form)" placeholder="Enter Total Amount"/>
+                <!-- Total  Amount : --> <form:hidden  path="totalAmount" id="totalAmount" name="totalAmount" onchange="emiCalculation(this.form)" readonly="true"/>
                 </div>
                 <br>
+                   <div>
+              No of EMI's in Month:
+                <form:select path="noOfEmis">
+                    <form:option value="12" label="12 Months" />
+                    <form:option value="24" label="24 Months" />
+                    <form:option value="36" label="36 Months" />
+                    <form:option value="48" label="48 Months" />
+                </form:select>
+            </div>
+            <%-- <br>
                 <div>
-                No of EMI's : <form:input path="noOfEmis" id="noOfEmis"  name="noOfEmis" onchange="emiCalculation()" placeholder="no of emi's on Month" />
-                </div>
-                <br>
-                <div>
-               EMI Due Date : <form:input type="date"  path="dueDate"  placeholder="enter EMI Due Date" />
+               EMI Due Date : <form:hidden  type="date"  path="dueDate"  placeholder="enter EMI Due Date" readonly="true" />
                 </div>
                 <br>
                  <div>
-               EMI Paid Date  : <form:input type="date" path="emiPaid"   placeholder="enter EMI Paid Date " />
+               EMI Paid Date  : <form:hidden  type="date" path="emiPaid"   placeholder="enter EMI Paid Date " readonly="true"/>
                 </div>
                 <br>
                 <div>
-               No Of EMI's Paid: <form:input  path="noOfEmiPaid" placeholder="Enter no of emi's paid in month" />
-                </div>
+               No Of EMI's Paid: <form:hidden   path="noOfEmiPaid" placeholder="Enter no of emi's paid in month" readonly="true" />
+                </div> --%>
+               <%--  <br>
+                <div>
+                No Of EMI's Pending : <form:hidden  path="noOfEmiPending" placeholder="Enter no of emi's pending in month" readonly="true"/>
+                </div> --%>
                 <br>
                 <div>
-               No Of EMI's Pending: <form:input  path="noOfEmiPending" placeholder="Enter no of emi's pending in month" />
-                </div>
+               Loan Status : 
+                    <form:input  path="loanStatus" value="Applied" label="Applied" readonly="true"/>
+            </div>
+              <%--   </div>
                 <br>
                 <div>
-               Loan Status  : <form:input path="loanStatus"   placeholder="enter  Loan Status " />
-                </div>
-                <br>
-                <div>
-               EMI Amount Per Month  : <form:input path="monthlyEMIAmount" id="monthlyEMIAmount" name="monthlyEMIAmount" onchange="emiCalculation(this.form)" placeholder="emi amount per month " />
+                EMI Amount Per Month  :  <form:hidden path="monthlyEMIAmount" id="monthlyEMIAmount" name="monthlyEMIAmount" onchange="emiCalculation(this.form)" readonly="true" />
                 </div>
                 <br>
                  <div>
-               Interest  : <form:input path="interest" id="interest"  name="interest" onchange="emiCalculation()" placeholder="enter Interest per Loan " />
+               Interest :    <form:hidden path="interest" id="interest"  name="interest" onchange="emiCalculation()"   />
                 </div>
-                <br>
+                <br> --%>
                 <div>
-                <input type="submit" value="Add Loan Details" />
+                <input type="submit" value="Apply Loan Details" />
                 <input type="reset">
                 </div>
             </form:form>

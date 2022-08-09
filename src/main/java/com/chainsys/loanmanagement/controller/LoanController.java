@@ -37,6 +37,13 @@ private LoanService loanservice;
 		loanservice.saveLoan(loan);
 		return "redirect:/loan/getallloan";
 	}
+	
+	@GetMapping("/adminupdateloan")
+	public String adminUpdateLoan()
+	{
+		return "admin-update-loan";
+	}
+	
 	@GetMapping("/updateloan")
 	public String loanUpdateForm(@RequestParam("loanid") int id,Model model)
 	{

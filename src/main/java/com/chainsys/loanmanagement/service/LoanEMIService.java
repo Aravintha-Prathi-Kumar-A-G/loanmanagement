@@ -23,7 +23,7 @@ public class LoanEMIService {
 	    	LoanEMIdetails emI=loanemi.save(loanemidetails);
 	    	LoanDetails loanDetails=LoanDetailsService.findLoanDetailsById(emI.getUserId());
 	    	loanDetails.setEmiPaid(emI.getEmiDate());
-	    	loanDetails.setTotalAmount(Logic.BalanceEmIAmount(loanDetails.getTotalAmount(), emI.getPaymentAmount()));
+	    	loanDetails.setTotalAmount(Logic.balanceEmIAmount(loanDetails.getTotalAmount(), emI.getPaymentAmount()));
 	    	loanDetails.setNoOfEmiPaid(Logic.increamentPaidEmI(loanDetails.getNoOfEmiPaid()));
 	    	loanDetails.setNoOfEmiPending(Logic.decreamentPendingEmI(loanDetails.getNoOfEmiPending()));
 	    	loanDetails.setDueDate(Logic.increamentDueDate(loanDetails.getDueDate()));

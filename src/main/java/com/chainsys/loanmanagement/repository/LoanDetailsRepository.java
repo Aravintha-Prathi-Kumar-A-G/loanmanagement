@@ -8,11 +8,11 @@ import com.chainsys.loanmanagement.model.LoanDetails;
 public interface LoanDetailsRepository extends CrudRepository <LoanDetails,Integer>{
 	LoanDetails findById (int id);
 	LoanDetails save (LoanDetails lod);
-	void deleteById(int lod_id);
+	void deleteById(int loan_id);
 	List <LoanDetails> findAll();
 	List<LoanDetails> findByUserId(int id);
 	List<LoanDetails> findByLoanId(int id);
 	
-	// List<LoanDetails> findByLoanApprovalStatus(String status);
+	 List<LoanDetails> findByLoanStatus(String status);
 
 }

@@ -37,6 +37,14 @@ public class UserController {
 		userservice.saveUser(user1);
 		return "redirect:/user/getallusers";
 	}
+	
+	 @GetMapping("/updateuserdetails")
+     public String updateUserDetails()
+     {
+  	   return "customer-update-byuserid";
+     }
+     
+	 
 	@GetMapping("/updateuserform")
 	public String showUpdateForm(@RequestParam("userid") int id,Model model)
 	{
@@ -72,6 +80,13 @@ public class UserController {
     	   return "loginform";
        }
        
+       @GetMapping("/viewLoanDetailsanduserdetails")
+       public String viewLoanDetailsAndUserDetailsByUserId()
+       {
+    	   return "view-loan-details-byuserid";
+       }
+       
+       
        @GetMapping("/getloandetailsbyuserid")
        public String getLoanDetailsByUserId(@RequestParam("userid")int id,Model model)
        {
@@ -80,6 +95,11 @@ public class UserController {
            model.addAttribute("loandetails",dto.getLoanlist());
            return "list-userdetails-loandetails";
     	   
+       }
+       @GetMapping("/viewform")
+       public String viewUserdetailsAndEMIdetails()
+       {
+    	   return "view-user-emi-byuserid";
        }
        
        @GetMapping("/getemidetailsbyuserid")

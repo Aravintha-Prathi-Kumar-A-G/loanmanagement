@@ -5,7 +5,7 @@ import java.text.ParseException;
 import java.text.SimpleDateFormat;
 
 public class Logic {
-	public static long BalanceEmIAmount(long totalAmount,long paidEmI) {
+	public static long balanceEmIAmount(long totalAmount,long paidEmI) {
 		return totalAmount-paidEmI;
 	}
 	public static int increamentPaidEmI(int paidEmI) {

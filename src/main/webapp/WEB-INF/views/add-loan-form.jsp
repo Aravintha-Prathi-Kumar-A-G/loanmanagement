@@ -18,7 +18,15 @@
                 </div>
                 <br>
                 <div>
-                Loan Type : <form:input  path="loanType" placeholder="enter Loan Type" />
+                 Loan Type :
+                <form:select path="loanType">
+                    <form:option value="PersonalLoan" label="PersonalLoan" />
+                    <form:option value="CarLoan" label="CarLoan" />
+                    <form:option value="HomeLoan" label="HomeLoan" />
+                    <form:option value="BusinessLoan"
+                        label="BusinessLoan" />
+                    <form:option value="others" label="others" />
+                </form:select>
                 </div>
                 <br>
                 <div>

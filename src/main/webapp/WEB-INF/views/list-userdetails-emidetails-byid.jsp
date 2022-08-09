@@ -24,8 +24,8 @@ table, th, td {
     <h1>Loan Management System</h1>
     <h2>User Details and Loan EMI Details Form</h2>
 
-    <div id="loan">
-        <table>
+    <div id="user">
+        <table width=90%>
             <thead>
                 <tr>
                     <th>User ID</th>
@@ -63,7 +63,7 @@ table, th, td {
     </div>
 
     <div id="loan details">
-        <table>
+        <table width=90%>
             <thead>
                 <tr>
                     <th>User ID</th>
