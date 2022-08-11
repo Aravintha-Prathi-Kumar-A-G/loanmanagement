@@ -22,7 +22,7 @@ public class LoanEMIService {
 	    public LoanEMIdetails saveEmi(LoanEMIdetails loanemidetails) {
 	    	LoanEMIdetails emI=loanemi.save(loanemidetails);
 	    	LoanDetails loanDetails=LoanDetailsService.findLoanDetailsById(emI.getUserId());
-	    	loanDetails.setEmiPaid(emI.getEmiDate());
+	    	loanDetails.setEmiPaid(Logic.getInstanceDate());
 	    	loanDetails.setTotalAmount(Logic.balanceEmIAmount(loanDetails.getTotalAmount(), emI.getPaymentAmount()));
 	    	loanDetails.setNoOfEmiPaid(Logic.increamentPaidEmI(loanDetails.getNoOfEmiPaid()));
 	    	loanDetails.setNoOfEmiPending(Logic.decreamentPendingEmI(loanDetails.getNoOfEmiPending()));

@@ -1,48 +1,63 @@
 package com.chainsys.loanmanagement.model;
 
-
-
 import java.sql.Date;
 import java.text.ParseException;
 import java.text.SimpleDateFormat;
 import java.util.Calendar;
-
 import javax.persistence.Column;
 import javax.persistence.Entity;
 import javax.persistence.FetchType;
+import javax.persistence.GeneratedValue;
+import javax.persistence.GenerationType;
 import javax.persistence.Id;
 import javax.persistence.JoinColumn;
 import javax.persistence.ManyToOne;
+import javax.persistence.SequenceGenerator;
 import javax.persistence.Table;
+import javax.validation.constraints.NotNull;
+
+
 @Entity
 @Table(name="loan_details")
 public class LoanDetails {
 	
 	@Column(name="loan_id")
 	private int loanId;
+	
 	@Id
 	@Column(name="user_id")
 	private int userId;
+	
 	@Column(name="loan_date")
 	private Date loanDate ;
+	
 	@Column(name="loan_amount")
 	private double loanAmount ;	
+	
 	@Column(name="no_of_emis")
 	private int noOfEmis;
+	
 	@Column(name="due_date")
 	private Date dueDate ;
+	
 	@Column(name="emi_paid")
 	private Date emiPaid ;
+	
 	@Column(name="no_of_emi_pending")
 	private int noOfEmiPending;
+	
 	@Column(name="no_of_emi_paid") 
 	private int noOfEmiPaid;
+	
 	@Column(name="interest")
 	private float interest;
+	
 	@Column(name="total_amount")
 	private long totalAmount;
+	
 	@Column(name="loan_status")
 	private String loanStatus;
+	
 	@Column (name="monthly_emi_amount")
 	private float monthlyEMIAmount;
 	
@@ -77,15 +92,8 @@ public class LoanDetails {
 			return loanDate;
 		}
 
-		public void setLoanDate() {
-			Calendar vcalendar =Calendar.getInstance();
-			String dates=vcalendar.get(Calendar.DATE)+"/"+(vcalendar.get(Calendar.MONTH)+1)+vcalendar.get(Calendar.YEAR);
-			SimpleDateFormat dateFormat=new SimpleDateFormat("dd/MM/yyyy");
-			try {
-				this.loanDate=new java.sql.Date(dateFormat.parse(dates).getTime());
-			} catch (ParseException e) {
-				e.printStackTrace();
-			}
+		public void setLoanDate(Date loanDate) {
+			this.loanDate=loanDate;
 		}
 
 		public double getLoanAmount() {

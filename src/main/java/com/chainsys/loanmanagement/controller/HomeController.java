@@ -50,11 +50,12 @@ public class HomeController {
 	    @PostMapping("/userpage")
 		public String userPage(@ModelAttribute("signin") SignIn signin, Model model) {
 			UserDetails userdetails = userdetailservice.findUserById(signin.getUserId());
+			model.addAttribute("userId", userdetails.getUserId());
 			if (userdetails.getPassword().equals(signin.getPassword())) 
 			{
 				if (userdetails.getRole().equalsIgnoreCase("user")) 
 				{
-					return "redirect:/home/customerform";
+					return "customer-form";
 
 				} else if (userdetails.getRole().equalsIgnoreCase("admin")) {
 					return "redirect:/home/adminpage";

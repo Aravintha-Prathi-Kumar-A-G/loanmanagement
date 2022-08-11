@@ -11,6 +11,8 @@ import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestParam;
 
+import com.chainsys.loanmanagement.businesslogic.Logic;
+import com.chainsys.loanmanagement.model.LoanDetails;
 import com.chainsys.loanmanagement.model.LoanEMIdetails;
 import com.chainsys.loanmanagement.service.LoanEMIService;
 import com.chainsys.loanmanagement.service.LoanDetailsService;
@@ -21,10 +23,17 @@ public class LoanEMIcontroller {
 	
 	@Autowired
 	private LoanEMIService loanemiservice;
+	@Autowired
+	private LoanDetailsService LoanDetailsService;
 	@GetMapping("/addemidetailsform")
-	public String emiDetailsAddForm(Model model)
+	public String emiDetailsAddForm(@RequestParam("id")int id,Model model)
 	{
 		LoanEMIdetails emidetails = new LoanEMIdetails();
+		LoanDetails loanDetails=LoanDetailsService.findLoanDetailsById(id);
+		emidetails.setUserId(id);
+		emidetails.setLoanId(loanDetails.getLoanId());
+		emidetails.setPaymentAmount((int)loanDetails.getMonthlyEMIAmount());
+		emidetails.setEmiDate(Logic.getInstanceDate());
 		model.addAttribute("addemidetails",emidetails);
 		return  "add-emi-details-form";
 	}

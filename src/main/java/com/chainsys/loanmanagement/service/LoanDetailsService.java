@@ -3,6 +3,8 @@ package com.chainsys.loanmanagement.service;
 import java.util.List;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
+
+import com.chainsys.loanmanagement.businesslogic.Logic;
 import com.chainsys.loanmanagement.model.LoanDetails;
 import com.chainsys.loanmanagement.repository.LoanDetailsRepository;
 
@@ -17,6 +19,7 @@ import com.chainsys.loanmanagement.repository.LoanDetailsRepository;
 	        return loandetailsList;
 	    }
 	    public LoanDetails saveLoanDetails(LoanDetails loandetails) {
+	    	loandetails.setLoanDate(Logic.getInstanceDate());
 	        return loandetailsrepo.save(loandetails);
 	    }
 

@@ -17,7 +17,7 @@ text-align: center;
     <br>
     <br>
     
-    <a href="/loan/addloanform">Add New Loan</a>
+    <a href="/loan/addloanform">New Loan Request</a>
     <br>
     <a href="/loandetails/addloandetailsform">Apply Loan Details</a>
     <br>
@@ -25,7 +25,7 @@ text-align: center;
     <br>
     <a href="/user/updateuserdetails">Update Customer Details</a>
     <br>
-    <a href="/emi/addemidetailsform">Pay EMI </a>
+    <a href="/emi/addemidetailsform?id=${userId}">Pay EMI </a>
     <br>
     <a href="/user/viewform">View Loan EMI Details By User ID</a>
     <br>
