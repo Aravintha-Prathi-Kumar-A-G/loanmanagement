@@ -24,12 +24,12 @@ public class LoanEMIcontroller {
 	@Autowired
 	private LoanEMIService loanemiservice;
 	@Autowired
-	private LoanDetailsService LoanDetailsService;
+	private LoanDetailsService loanDetailsService;
 	@GetMapping("/addemidetailsform")
 	public String emiDetailsAddForm(@RequestParam("id")int id,Model model)
 	{
 		LoanEMIdetails emidetails = new LoanEMIdetails();
-		LoanDetails loanDetails=LoanDetailsService.findLoanDetailsById(id);
+		LoanDetails loanDetails=loanDetailsService.findLoanDetailsById(id);
 		emidetails.setUserId(id);
 		emidetails.setLoanId(loanDetails.getLoanId());
 		emidetails.setPaymentAmount((int)loanDetails.getMonthlyEMIAmount());
@@ -42,7 +42,7 @@ public class LoanEMIcontroller {
 	public String addNewEmiDetails(@ModelAttribute("addemidetails") LoanEMIdetails emidetails)
 	{
 		loanemiservice.saveEmi(emidetails);
-		return "redirect:/emi/getallloanemidetails";
+		return "redirect:/home/customerform";
 	}
 	@GetMapping("/updateemidetailsform")
 	public String emiUpdateForm(@RequestParam("userid") int id,Model model)

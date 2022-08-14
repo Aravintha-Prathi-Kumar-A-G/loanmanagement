@@ -26,8 +26,8 @@ public class UserController {
 	@GetMapping("/adduserform")
 	public String userAddForm(Model model)
 	{
-		UserDetails userdet = new UserDetails();
-		model.addAttribute("adduser",userdet);
+		UserDetails userdetails = new UserDetails();
+		model.addAttribute("adduser",userdetails);
 		return  "add-user-registration-form";
 	}
 	
@@ -96,7 +96,7 @@ public class UserController {
            return "list-userdetails-loandetails";
     	   
        }
-       @GetMapping("/viewform")
+       @GetMapping("/viewformuserandemidetails")
        public String viewUserdetailsAndEMIdetails()
        {
     	   return "view-user-emi-byuserid";

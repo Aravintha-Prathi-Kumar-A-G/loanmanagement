@@ -7,8 +7,8 @@ import com.chainsys.loanmanagement.model.UserDetails;
 
 public interface UserDetailsRepository extends CrudRepository <UserDetails,Integer>{
 	UserDetails findById (int id);
-	UserDetails save (UserDetails usr);
-	void deleteById(int usr_id);
+	UserDetails save (UserDetails user);
+	void deleteById(int user_id);
 	List <UserDetails> findAll();
 }
 

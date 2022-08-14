@@ -7,10 +7,34 @@
 <head>
 <meta charset="ISO-8859-1">
 <title>Approved Loan Details</title>
+<style type="text/css">
+#loan1 {
+  font-family: Arial, Helvetica, sans-serif;
+  border-collapse: collapse;
+  width: 100%;
+}
+
+#loan1 td, # th {
+  border: 1px solid #4E5180;
+  padding: 8px;
+}
+
+#loan tr:nth-child(even){background-color: #F3E3C3;}
+
+#loan tr:hover {background-color: #FF7082;}
+
+#loan th {
+  padding-top: 12px;
+  padding-bottom: 12px;
+  text-align: left;
+  background-color: #800080;
+  color: white;
+}
+</style>
 </head>
 <body style="background-color: powderblue;">
 	<div id="table root">
-		<table>
+		<table id="loan">
 			<thead>
 				<tr>
 					<th>User ID</th>

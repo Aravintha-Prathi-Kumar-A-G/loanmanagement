@@ -83,7 +83,7 @@ public class LoanDetailsController {
 	@GetMapping("/loanrejected")
 	public String epassApprovedStatus(Model model) {
 		List<LoanDetails> loandetails = loandetservice.loanRejected();
-		model.addAttribute("loanstatus", loandetails);
+		model.addAttribute("loanrejected", loandetails);
 		return "loan-status-rejected";
 	}
 

@@ -44,10 +44,8 @@ div {
 	}
 </script>
 </head>
-<body>
-	<h1>Loan Management System</h1>
-	<br>
-	<h3>User Registration form</h3>
+<body  style="background-color:#CCFFFF;">
+	<h1>User Registration form</h1>
 	<br>
 	<div id="form">
 		<form:form action="adduserdetails" method="post"
@@ -133,12 +131,12 @@ div {
 				<tr>
 					<td>User Password :</td>
 					<td><form:password path="password" name="firstpassword"
-							pattern="^(?=.[A-Za-z])(?=.\\d)(?=.[@$!%#?&])[A-Za-z\\d@$!%*#?&]{8,}$"
-							required="true" />
+							pattern="^(?=.*[A-Za-z])(?=.*\d)(?=.*[@$!%*#?&])[A-Za-z\d@$!%*#?&]{8,}$"
+						title="password must contains 8 letters and eg.Asddjh@45687"	required="true" />
 				</tr>
 				<tr>
-					<td><input type="submit" value="Submit" /> <input
-						type="reset"></td>
+					<td><input type="submit" value="submit" />
+					 <input	type="reset"></td>
 				</tr>
 			</table>
 		</form:form>

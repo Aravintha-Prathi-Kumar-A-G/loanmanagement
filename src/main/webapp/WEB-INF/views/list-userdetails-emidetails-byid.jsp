@@ -18,6 +18,7 @@ table, th, td {
     margin-right: auto;
     text-align: center;
 }
+
 </style>
 </head>
 <body style="background-color: powderblue;">

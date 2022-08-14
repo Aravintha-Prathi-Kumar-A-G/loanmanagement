@@ -15,27 +15,27 @@
             <form:form action="addemidetails" method="post" modelAttribute="addemidetails">
                 
                 <div>
-                User ID :<form:input path="userId" placeholder="enter User ID"/>
+                User ID :<form:input type="number" path="userId" placeholder="enter User ID" readonly="true"/>
                 </div>
                 <br>
                 <div>
-                Loan ID : <form:input path="loanId" placeholder="enter Loan ID" />
+                Loan ID : <form:input type="number" path="loanId" placeholder="enter Loan ID" readonly="true" />
                 </div>
                 <br>
                 <div>
-                EMI Date : <form:input type="date" path="emiDate" placeholder="enter loan issue date" />
+                EMI Date : <form:input type="date" path="emiDate" placeholder="enter loan issue date" readonly="true"/>
                 </div>
                 <br>
                 <div>
-                Payment Amount : <form:input  path="paymentAmount" placeholder="Enter Payment Amount"/>
+                Payment Amount : <form:input type="number" path="paymentAmount" required="true"/>
                 </div>
                 <br>
-                <div>
+                <%-- <div>
                 Payment ID : <form:input path="paymentId" placeholder="Payment Id" />
                 </div>
-                <br>
+                <br> --%>
                 <div>
-                <input type="submit" value="Add Loan EMI Details" />
+                <input type="submit" value="Pay EMI" />
                 <input type="reset">
                 </div>
             </form:form>

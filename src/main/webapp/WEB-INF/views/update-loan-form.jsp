@@ -15,18 +15,18 @@
             <form:form action="updateloan" method="post" modelAttribute="updateloan">
                 
                 <div>
-                Loan ID :<form:input type="text" path="loanId" placeholder="enter Loan ID"/>
+                Loan ID :<form:input type="text" path="loanId" placeholder="enter Loan ID" />
                 </div>
                 <br>
                 <div>
                  Loan Type :
                 <form:select path="loanType">
-                    <form:option value="PersonalLoan" label="PersonalLoan" />
-                    <form:option value="CarLoan" label="CarLoan" />
-                    <form:option value="HomeLoan" label="HomeLoan" />
+                    <form:option value="PersonalLoan" label="PersonalLoan" required="true" />
+                    <form:option value="CarLoan" label="CarLoan" required="true" />
+                    <form:option value="HomeLoan" label="HomeLoan" required="true" />
                     <form:option value="BusinessLoan"
-                        label="BusinessLoan" />
-                    <form:option value="others" label="others" />
+                        label="BusinessLoan" required="true" />
+                    <form:option value="others" label="others" required="true" />
                 </form:select>
                 </div>
                 <br>

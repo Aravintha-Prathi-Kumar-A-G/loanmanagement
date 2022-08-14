@@ -78,6 +78,7 @@ table, th, td {
 						<td>${loandet.monthlyEMIAmount}</td>
 						<td>${loandet.totalAmount}</td>
 						<td>${loandet.loanStatus}</td>
+						<td><button onclick = "window.location.href='/loandetails/adminupdateloandetails'">Update</button></td>
                     </tr>
                 </c:forEach>
             </tbody>

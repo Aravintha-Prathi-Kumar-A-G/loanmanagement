@@ -12,6 +12,7 @@ text-align: center;
 </style>
 </head>
 <body>
+
     <h1>Online Loan Management System</h1>
     <h2>Customer Page</h2>
     <br>
@@ -27,7 +28,7 @@ text-align: center;
     <br>
     <a href="/emi/addemidetailsform?id=${userId}">Pay EMI </a>
     <br>
-    <a href="/user/viewform">View Loan EMI Details By User ID</a>
+    <a href="/user/viewformuserandemidetails">View Loan EMI Details By User ID</a>
     <br>
 </body>
 </html>

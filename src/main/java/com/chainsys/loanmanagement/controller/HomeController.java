@@ -22,7 +22,7 @@ public class HomeController {
 	public String signInPage(Model model) {
 		SignIn signin = new SignIn();
 		model.addAttribute("signin", signin);
-		return "users-login-form1";
+		return "login-form";
 	}
 
 	@GetMapping("/newuserregistration")
@@ -35,16 +35,26 @@ public class HomeController {
 	        return "loanmanagement-index";
 	    }
 	    
+	    @GetMapping("/loanmanagementhomepage")
+	    public String homePageLoanManagement()
+	    {
+	    	return "loanmanagement-system-home";
+	    	//return "login-form";
+	    	// return "loan-customer-form2";
+	    	//return "admin-page-loanmanagement";
+	    }
+	    
 	    @GetMapping("/customerform")
 	    public String customerPage(Model model)
 	    {
-	    	return "customer-form";
+	    	return "loan-customer-form2";
+	    	// return "customer-form";
 	    }
 	    
 	    @GetMapping("/adminpage")
 	    public String adminPage()
 	    {
-	    	return "admin-form";
+	    	return "admin-page-loanmanagement";
 	    }
 	    
 	    @PostMapping("/userpage")
@@ -55,16 +65,16 @@ public class HomeController {
 			{
 				if (userdetails.getRole().equalsIgnoreCase("user")) 
 				{
-					return "customer-form";
+					return "redirect:/home/customerform";
 
 				} else if (userdetails.getRole().equalsIgnoreCase("admin")) {
 					return "redirect:/home/adminpage";
 				}
 			} else {
 				model.addAttribute("message", "Somthing Wrong ");
-				return "users-login-form1";
+				return "login-form";
 			}
-			return "users-login-form1";
+			return "login-form";
 	    
 	    
 	}

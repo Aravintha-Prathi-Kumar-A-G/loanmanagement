@@ -5,9 +5,12 @@ import java.sql.Date;
 import javax.persistence.Column;
 import javax.persistence.Entity;
 import javax.persistence.FetchType;
+import javax.persistence.GeneratedValue;
+import javax.persistence.GenerationType;
 import javax.persistence.Id;
 import javax.persistence.JoinColumn;
 import javax.persistence.ManyToOne;
+import javax.persistence.SequenceGenerator;
 import javax.persistence.Table;
 
 @Entity
@@ -20,6 +23,8 @@ public class LoanEMIdetails {
 	private int paymentAmount;
 	@Id
 	@Column(name = "payment_id")
+	@GeneratedValue(strategy = GenerationType.AUTO, generator = "payment_id_seq")
+    @SequenceGenerator(name = "payment_id_seq", sequenceName = "payment_id_seq",  allocationSize = 1)
 	private int paymentId;
 	@Column(name = "user_id")
 	private int userId;

@@ -18,32 +18,50 @@ table, th, td {
     margin-right: auto;
     text-align: center;
 }
+
 </style>
 </head>
-<body>
-<div id="root">
-		<div id="getuserdetails">
-			<form:form action="add" method="post" modelAttribute="getuserdetails">
-				<div>
-					<label for="userId">User Id</label>
-					<div>
-						<form:input path="userId" />
-					</div>
-				</div>
-				<div>
-					<label for="userName">User Name</label>
-					<div>
-						<form:input path="userName" />
-					</div>
-				</div>
-				<div>
-					<label for="email">Mail ID</label>
-					<div>
-						<form:input path="email" />
-					</div>	
-			</form:form>
-		</div>
-	</div>
+<body style="background-color: powderblue;">
+    <h1>Loan Management System</h1>
+    <h2>User Details and Loan  Details Form</h2>
+ <div id="user">
+        <table width=90%>
+            <thead>
+                <tr>
+                    <th>User ID</th>
+					<th>Users Name</th>
+					<th>Gender</th>
+					<th>Age</th>
+					<th>Date Of Birth</th>
+					<th>Phone Number</th>
+					<th>Pancard Number</th>
+					<th>Account Number</th>
+					<th>Email</th>
+					<th>Address</th>
+					<th>Pincode</th>
+					<th>Role</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr>
+                 	    <td>${getuserdetails.userId}</td>
+						<td>${getuserdetails.userName}</td>
+						<td>${getuserdetails.gender}</td>
+						<td>${getuserdetails.age}</td>
+						<td>${getuserdetails.dob}</td>
+						<td>${getuserdetails.phoneNumber}</td>
+						<td>${getuserdetails.pancardNumber}</td>
+						<td>${getuserdetails.accountNumber}</td>
+						<td>${getuserdetails.email}</td>
+						<td>${getuserdetails.address}</td>
+						<td>${getuserdetails.pincode}</td>
+						<td>${getuserdetails.role}</td>
+                   
+                </tr>
+            </tbody>
+        </table>
+    </div>
+    <br>
 	<div id="loandetails">
 		<table>
 			<thead>
