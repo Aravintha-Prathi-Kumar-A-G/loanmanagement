@@ -8,31 +8,67 @@
 <meta charset="ISO-8859-1">
 <title>Processing Loan Details</title>
 <style type="text/css">
-#loan1 {
-  font-family: Arial, Helvetica, sans-serif;
-  border-collapse: collapse;
-  width: 100%;
-}
-
-#loan1 td, # th {
-  border: 1px solid #4E5180;
-  padding: 8px;
-}
-
-#loan tr:nth-child(even){background-color: #F3E3C3;}
-
-#loan tr:hover {background-color: #FF7082;}
-
-#loan th {
-  padding-top: 12px;
-  padding-bottom: 12px;
-  text-align: left;
-  background-color: #800080;
-  color: white;
-}
+<%@include file="css/admin-navbar.css"%>
+<%@include file="css/table-style.css"%>
 </style>
 </head>
-<body style="background-color: powderblue;">
+<body style="background-color: #808080;">
+<div>
+<nav>
+			<div id="logo">LOAN MANAGEMENT SYSTEM (Admin)</div>
+
+			<label for="drop" class="toggle">Menu</label> <input type="checkbox"
+				id="drop" />
+			<ul class="menu">
+				<li><a href="/home/loanmanagementhomepage">Home</a></li>
+				<li>
+					<!-- First Tier Drop Down --> <label for="drop-1" class="toggle">Update
+						+</label> <a href="#">Update</a> <input type="checkbox" id="drop-1" />
+					<ul>
+						<li><a href="/loandetails/adminupdateloandetails">Update Loan Details</a></li>
+						<li><a href="/loan/adminupdateloan">Update Loan Type</a></li>
+						<li><a href="/user/updateuserdetails">Update Admin Details</a></li>
+					</ul>
+
+				</li>
+				<li>
+					 <label for="drop-1" class="toggle">List ALL+
+						</label> <a href="#">List All</a> <input type="checkbox" id="drop-1" />
+					<ul>
+						<li><a href="/user/getallusers">List All Users</a></li>
+						<li><a href="/loan/getallloan">List All Loans</a></li>
+					</ul>
+
+				</li>
+				
+				<li>
+				 <label for="drop-2" class="toggle">View
+						& Status+</label> <a href="#">Loan Status</a> <input type="checkbox"
+					id="drop-2" />
+					<ul>
+						<li><a href="/loandetails/loanapproved">Approved</a></li>
+						<li><a href="/loandetails/loanapplied">Applied</a></li>
+						<li>
+						<li><a href="/loandetails/loanrejected">Rejected</a></li>
+						<li><a href="/loandetails/loanprocessing">Processing</a></li>
+						<li>
+							<!-- Second Tier Drop Down --> <label for="drop-3" class="toggle">View
+								+</label> <a href="#">View</a> <input type="checkbox" id="drop-3" />
+
+							<ul>
+								<li><a href="/user/viewLoanDetailsanduserdetails">Loan Details By User ID</a></li>
+								<li><a href="/user/viewformuserandemidetails">EMI Details By User ID</a></li>
+								<li><a href="/loan/viewloanandloandetailsbyloanid">Loan Details By Loan ID</a></li>
+								<li><a href="/loan/viewloanandemidetailsbyloanid">EMI Details By Loan ID</a></li>
+							</ul>
+						</li>
+					</ul>
+				</li>
+				<li><a href="/home/loanmanagementhomepage"">Sign Out</a></li>
+				<li><a href="#">About</a></li>
+			</ul>
+		</nav>
+</div>
 	<div id="table root">
 		<table id="loan" >
 			<thead>
@@ -43,14 +79,14 @@
 					<th>Loan Amount</th>
 					<th>No of EMI's</th>
 					<th>Due Date</th>
-					<th>EMI paid Date</th>
-					<th>No of EMI Paid in Month</th>
-					<th>No of EMI Pending in Month</th>
+					<th>Paid Date</th>
+					<th>Paid EMI</th>
+					<th>Pending EMI</th>
 					<th>Interest</th>
-					<th>EMI Amount Per Month</th>
+					<th>EMI Amount </th>
 					<th>Total Amount</th>
 					<th>Loan Status</th>
-					<th>Edit/Update</th>
+					<th>UPDATE</th>
 				</tr>
 			</thead>
 			<tbody>
@@ -69,7 +105,7 @@
 						<td>${loandet.monthlyEMIAmount}</td>
 						<td>${loandet.totalAmount}</td>
 						<td>${loandet.loanStatus}</td>
-						<td><button onclick = "window.location.href='/loandetails/adminupdateloandetails'">Update</button></td>
+						<td><button onclick = "window.location.href='/loandetails/updateloandetailsform?userid=${loandet.userId}'">Update</button></td>
 					</tr>
 				</c:forEach>
 			</tbody>

@@ -36,6 +36,7 @@ private LoanService loanservice;
 	{
 		loanservice.saveLoan(loan);
 		return "redirect:/loan/getallloan";
+		//return "redirect:/loandetails/addloandetailsform";
 	}
 	
 	@GetMapping("/adminupdateloan")
@@ -74,6 +75,11 @@ private LoanService loanservice;
    		model.addAttribute("getallloan", loanlist);
    		return "get-all-loan";
    	}
+       @GetMapping("/viewloanandloandetailsbyloanid")
+       public String viewLoanAndLoanDetailsByLoanID()
+       {
+    	   return "view-loan-details-byloanid";
+       }
 	
    	@GetMapping("/getloandetailsbyloan")
     public String getLoanDetails(@RequestParam("loanid") int id,Model model) {
@@ -82,6 +88,12 @@ private LoanService loanservice;
         model.addAttribute("loandetails",dto.getLoanlist());
         return "list-loan-loandetails";
     }
+   	
+   	@GetMapping("/viewloanandemidetailsbyloanid")
+   	public String viewLoanAndEMIdetailsByLoanId()
+   	{
+   		return "view-loan-emi-details-byloanid";
+   	}
 
 	@GetMapping("/getemidetailsbyloan")
     public String getEMIdetails(@RequestParam("loanid") int id,Model model) {

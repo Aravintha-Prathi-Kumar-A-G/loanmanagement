@@ -119,7 +119,7 @@ div {
 					<td>Pincode :</td>
 					<td><form:input path="pincode" name="pincode number"
 							placeholder="enter your pincode"
-							pattern="^[1-9]{1}[0-9]{2}\\s{0, 1}[0-9]{3}$"
+							pattern="^[0-9]{6}"
 							title="enter your valid picode number" required="true" /></td>
 				</tr>
 				<tr>
@@ -130,7 +130,7 @@ div {
 				</tr>
 				<tr>
 					<td>User Password :</td>
-					<td><form:password path="password" name="firstpassword"
+					<td><form:password path="password" name="password"
 							pattern="^(?=.*[A-Za-z])(?=.*\d)(?=.*[@$!%*#?&])[A-Za-z\d@$!%*#?&]{8,}$"
 						title="password must contains 8 letters and eg.Asddjh@45687"	required="true" />
 				</tr>

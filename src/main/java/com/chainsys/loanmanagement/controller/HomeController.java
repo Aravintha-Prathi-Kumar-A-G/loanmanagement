@@ -7,6 +7,7 @@ import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.ModelAttribute;
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestMapping;
+import org.springframework.web.bind.annotation.RequestParam;
 
 import com.chainsys.loanmanagement.model.SignIn;
 import com.chainsys.loanmanagement.model.UserDetails;
@@ -45,8 +46,9 @@ public class HomeController {
 	    }
 	    
 	    @GetMapping("/customerform")
-	    public String customerPage(Model model)
-	    {
+	    public String customerPage(@RequestParam("userId") int userId,Model model)
+	    {	System.out.println(userId);
+	    	model.addAttribute("userId", userId);
 	    	return "loan-customer-form2";
 	    	// return "customer-form";
 	    }
@@ -64,8 +66,8 @@ public class HomeController {
 			if (userdetails.getPassword().equals(signin.getPassword())) 
 			{
 				if (userdetails.getRole().equalsIgnoreCase("user")) 
-				{
-					return "redirect:/home/customerform";
+				{	int id=userdetails.getUserId();
+					return "redirect:/home/customerform?userId="+id;
 
 				} else if (userdetails.getRole().equalsIgnoreCase("admin")) {
 					return "redirect:/home/adminpage";

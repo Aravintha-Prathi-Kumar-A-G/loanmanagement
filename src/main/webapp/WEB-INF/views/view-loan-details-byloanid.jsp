@@ -1,12 +1,11 @@
 <%@ page language="java" contentType="text/html; charset=ISO-8859-1"
     pageEncoding="ISO-8859-1"%>
 <%@ taglib prefix="form" uri="http://www.springframework.org/tags/form"%>
-<%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core"%>
 <!DOCTYPE html>
 <html>
 <head>
 <meta charset="ISO-8859-1">
-<title>Get All Loan</title>
+<title>VIEW LOAN  AND  LOAN DETAILS</title>
 <style>
 #loan1 {
   font-family: Arial, Helvetica, sans-serif;
@@ -30,37 +29,21 @@
   background-color: #800080;
   color: white;
 }
-h1, h2, h3 {
-    text-align: center;
-}
-table, th, td {
-    border: 2px solid black;
-    border-collapse: collapse;
-    margin-left: auto;
-    margin-right: auto;
+* {
     text-align: center;
 }
 </style>
+</style>
 </head>
-<body style="background-color: powderblue;">
-<h1>List All Loans</h1>
-	<div id="table root">
-		<table id="loan">
-			<thead>
-				<tr>
-					<th>Loan ID</th>
-					<th>Loan Type</th>
-				</tr>
-			</thead>
-			<tbody>
-				<c:forEach var="loan" items="${getallloan}">
-					<tr>
-						<td>${loan.loanId}</td>
-						<td>${loan.loanType}</td>
-					</tr>
-				</c:forEach>
-			</tbody>
-		</table>
-	</div>
+<body>
+    <h1>Online Loan Management System</h1>
+    <h3>VIEW LOAN & Loan DETAILS By Loan ID</h3>
+            <form action="/loan/getloandetailsbyloan"  method="get">
+                <div>
+                    Loan ID : <input type="text" name="loanid" />
+                </div>
+                <br>
+                <input type="submit" value="GET" />
+            </form>
 </body>
 </html>

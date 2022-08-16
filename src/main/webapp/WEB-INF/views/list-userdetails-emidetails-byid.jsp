@@ -8,6 +8,28 @@
 <meta charset="ISO-8859-1">
 <title>User Details & Loan EMI Details Tables</title>
 <style>
+#loan1 {
+  font-family: Arial, Helvetica, sans-serif;
+  border-collapse: collapse;
+  width: 100%;
+}
+
+#loan1 td, # th {
+  border: 1px solid #4E5180;
+  padding: 8px;
+}
+
+#loan tr:nth-child(even){background-color: #F3E3C3;}
+
+#loan tr:hover {background-color: #FF7082;}
+
+#loan th {
+  padding-top: 12px;
+  padding-bottom: 12px;
+  text-align: left;
+  background-color: #800080;
+  color: white;
+}
 h1, h2, h3 {
     text-align: center;
 }
@@ -18,7 +40,6 @@ table, th, td {
     margin-right: auto;
     text-align: center;
 }
-
 </style>
 </head>
 <body style="background-color: powderblue;">
@@ -26,7 +47,7 @@ table, th, td {
     <h2>User Details and Loan EMI Details Form</h2>
 
     <div id="user">
-        <table width=90%>
+        <table id="loan" width=90%>
             <thead>
                 <tr>
                     <th>User ID</th>
@@ -64,7 +85,7 @@ table, th, td {
     </div>
 
     <div id="loan details">
-        <table width=90%>
+        <table id="loan" width=90%>
             <thead>
                 <tr>
                     <th>User ID</th>

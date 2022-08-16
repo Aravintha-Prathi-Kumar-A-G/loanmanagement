@@ -44,13 +44,11 @@ function ageCount() {
 }
 </script>
 </head>
-<body>
-<h1>Loan Management System</h1>
+<body style="background-color:#CCFFFF;" >
+<h1>Update User Details</h1>
 <br>
-    <h3> Update User Details </h3>
-    <br>
         <div id="form">
-            <form:form action="adduserdetails" method="post" modelAttribute="adduser">
+            <form:form action="adduserdetails" method="post" modelAttribute="updateuser">
                 <table class ="center">
                 <tr>
                 <td>UserId </td>
@@ -99,18 +97,19 @@ function ageCount() {
                 </tr>
                 <tr>
                  <td>Pincode   </td>
-                <td> <form:input path="pincode" name="pincode number"  placeholder="enter your pincode" pattern="^[1-9]{1}[0-9]{2}\\s{0, 1}[0-9]{3}$" title="enter your valid picode number"  required="true"/></td>
+                <td> <form:input path="pincode" name="pincode number"  placeholder="enter your pincode" pattern="[1-9]{6}" title="enter your valid picode number"  required="true"/></td>
                 </tr>
                 <tr>
                <td>  Role  </td>
                 <td> <form:radiobutton path="role" value="User"  required="true"/>User
                          <form:radiobutton path="role" value="Admin"  required="true"/>Admin </td>
                 </tr>
-                <tr>
-                <td>User Password </td>
-                <td><form:password path="password" name="firstpassword" 
-                    pattern="^(?=.[A-Za-z])(?=.\\d)(?=.[@$!%#?&])[A-Za-z\\d@$!%*#?&]{8,}$" required="true"/>
-            </tr>
+              <tr>
+					<td>User Password :</td>
+					<td><form:password path="password" name="password"
+							pattern="^(?=.*[A-Za-z])(?=.*\d)(?=.*[@$!%*#?&])[A-Za-z\d@$!%*#?&]{8,}$"
+						title="password must contains 8 letters and eg.Asddjh@45687"	required="true" />
+				</tr>
                 <tr>
                <td> <input type="submit" value="Update User Details" />
                 <input type="reset"> </td>
