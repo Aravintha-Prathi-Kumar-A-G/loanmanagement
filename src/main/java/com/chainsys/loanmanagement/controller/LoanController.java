@@ -35,8 +35,8 @@ private LoanService loanservice;
 	public String addNewLoan(@ModelAttribute("addnewloan") Loan loan)
 	{
 		loanservice.saveLoan(loan);
-		return "redirect:/loan/getallloan";
-		//return "redirect:/loandetails/addloandetailsform";
+		//return "redirect:/loan/getallloan";
+		return "redirect:/loandetails/addloandetailsform";
 	}
 	
 	@GetMapping("/adminupdateloan")

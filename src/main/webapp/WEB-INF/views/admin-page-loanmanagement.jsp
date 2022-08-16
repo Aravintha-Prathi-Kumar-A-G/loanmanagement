@@ -33,7 +33,7 @@ background-image: url("https://www.graphen.ai/products/img/loan1.jpeg");
 					<ul>
 						<li><a href="/loandetails/adminupdateloandetails">Update Loan Details</a></li>
 						<li><a href="/loan/adminupdateloan">Update Loan Type</a></li>
-						<li><a href="/user/updateuserdetails">Update Admin Details</a></li>
+						<li><a href="/user/updateuserform?userId=${userId}">Update Admin Details</a></li>
 					</ul>
 
 				</li>

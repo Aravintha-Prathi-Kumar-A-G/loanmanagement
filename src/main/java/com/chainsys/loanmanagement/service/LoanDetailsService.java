@@ -31,8 +31,7 @@ import com.chainsys.loanmanagement.repository.LoanDetailsRepository;
 	    }
 
 	   public List<LoanDetails> findByLoanStatus(String status) {
-			List<LoanDetails> statusList = loandetailsrepo.findByLoanStatus(status);
-			return statusList;
+			return loandetailsrepo.findByLoanStatus(status);
 		}
 	    
 	    public List<LoanDetails> loanProcessing() {

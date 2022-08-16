@@ -3,7 +3,7 @@
 <%@ taglib prefix="form" uri="http://www.springframework.org/tags/form"%>
 <%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core"%>
 <!DOCTYPE html>
-<html>
+<html lang="en">
 <head>
 <meta charset="ISO-8859-1">
 <title>Applied Loan Details</title>
@@ -64,7 +64,7 @@
 						</li>
 					</ul>
 				</li>
-				<li><a href="/home/loanmanagementhomepage"">Sign Out</a></li>
+				<li><a href="/home/loanmanagementhomepage">Sign Out</a></li>
 				<li><a href="#">About</a></li>
 			</ul>
 		</nav>

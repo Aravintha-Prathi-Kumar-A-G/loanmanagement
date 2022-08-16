@@ -39,10 +39,11 @@ public class LoanEMIcontroller {
 	}
 	
 	@PostMapping("/addemidetails")
-	public String addNewEmiDetails(@ModelAttribute("addemidetails") LoanEMIdetails emidetails)
+	public String addNewEmiDetails(@ModelAttribute("addemidetails") LoanEMIdetails emiDetails)
 	{
-		loanemiservice.saveEmi(emidetails);
-		return "redirect:/home/customerform";
+		loanemiservice.saveEmi(emiDetails);
+		int id=emiDetails.getUserId();
+		return "redirect:/home/customerform?userId="+id;
 	}
 	@GetMapping("/updateemidetailsform")
 	public String emiUpdateForm(@RequestParam("userid") int id,Model model)
@@ -52,8 +53,8 @@ public class LoanEMIcontroller {
 		return "update-emi-details-form";
 	}
     @PostMapping("/updateemidetails")
-	public String updateEmi(@ModelAttribute("updateemidetails") LoanEMIdetails loanid) {
-    	loanemiservice.saveEmi(loanid);
+	public String updateEmi(@ModelAttribute("updateemidetails") LoanEMIdetails loanId) {
+    	loanemiservice.saveEmi(loanId);
 		return "redirect:/emi/getallloanemidetails";
 	}
     @GetMapping("/deleteemidetails")

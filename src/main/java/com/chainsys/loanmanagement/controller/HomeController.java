@@ -47,15 +47,16 @@ public class HomeController {
 	    
 	    @GetMapping("/customerform")
 	    public String customerPage(@RequestParam("userId") int userId,Model model)
-	    {	System.out.println(userId);
+	    {	
 	    	model.addAttribute("userId", userId);
 	    	return "loan-customer-form2";
 	    	// return "customer-form";
 	    }
 	    
 	    @GetMapping("/adminpage")
-	    public String adminPage()
+	    public String adminPage(@RequestParam("userId")int userId,Model model)
 	    {
+	    	model.addAttribute("userId",userId);
 	    	return "admin-page-loanmanagement";
 	    }
 	    
@@ -70,7 +71,8 @@ public class HomeController {
 					return "redirect:/home/customerform?userId="+id;
 
 				} else if (userdetails.getRole().equalsIgnoreCase("admin")) {
-					return "redirect:/home/adminpage";
+					int id=userdetails.getUserId();
+					return "redirect:/home/adminpage?userId="+id;
 				}
 			} else {
 				model.addAttribute("message", "Somthing Wrong ");

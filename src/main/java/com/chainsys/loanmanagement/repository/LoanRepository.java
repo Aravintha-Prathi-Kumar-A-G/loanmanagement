@@ -9,7 +9,7 @@ public interface LoanRepository extends CrudRepository <Loan,Integer>{
 	Loan findById (int id);
 	Loan save (Loan lo);
 	// Used for both adding new Loan and Modifying new Loan
-	void deleteById(int lo_id);
+	void deleteById(int loanId);
 	List <Loan> findAll();
 
 }

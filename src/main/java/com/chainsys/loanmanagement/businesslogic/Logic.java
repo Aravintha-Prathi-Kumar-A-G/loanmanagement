@@ -12,8 +12,8 @@ public class Logic {
 	public static int increamentPaidEmI(int paidEmI) {
 		return paidEmI+1;
 	}
-	public static int decreamentPendingEmI(int PendingEmI) {
-		return PendingEmI-1;
+	public static int decreamentPendingEmI(int pendingEmI) {
+		return pendingEmI-1;
 	}
 	public static Date increamentDueDate(Date date) {
 		String date1=date+"";
@@ -45,24 +45,10 @@ public class Logic {
         Date date=null;
         try {
             date=new java.sql.Date(dateFormat.parse(dates).getTime());
-//        	date=dateFormat.parse(dates);
-   //         System.out.println(date);
         } catch (ParseException e) {
             e.printStackTrace();
         }
         return date;
     }
-//	public static void main(String[] args) {
-//		
-//		SimpleDateFormat dateFormat=new SimpleDateFormat("dd/MM/yyyy");
-//		Date nextDueDate = null;
-//		try {
-//			nextDueDate=new java.sql.Date(dateFormat.parse("05/12/2022").getTime());
-//		} catch (ParseException e) {
-//			e.printStackTrace();
-//		}
-//		System.out.println(nextDueDate);
-//		System.out.println(increamentDueDate(nextDueDate));
-//		System.out.println(getInstanceDate());
-//	}
+
 }

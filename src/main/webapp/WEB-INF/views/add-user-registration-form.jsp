@@ -3,24 +3,12 @@
 <%@ taglib prefix="form" uri="http://www.springframework.org/tags/form"%>
 <%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core"%>
 <!DOCTYPE html>
-<html>
+<html lang="en">
 <head>
 <meta charset="ISO-8859-1">
 <title>Registration form</title>
 <style>
-h1, h2, h3 {
-	text-align: center;
-}
-
-div {
-	height: 200px;
-	width: 600px;
-	position: fixed;
-	top: 30%;
-	left: 50%;
-	margin-top: -100px;
-	margin-left: -200px;
-}
+<%@include file="css/forms.css"%>
 </style>
 <script type="text/javascript">
 	function ageCount() {
@@ -134,10 +122,10 @@ div {
 							pattern="^(?=.*[A-Za-z])(?=.*\d)(?=.*[@$!%*#?&])[A-Za-z\d@$!%*#?&]{8,}$"
 						title="password must contains 8 letters and eg.Asddjh@45687"	required="true" />
 				</tr>
-				<tr>
-					<td><input type="submit" value="submit" />
-					 <input	type="reset"></td>
-				</tr>
+				  <tr>
+                        <td><button type="reset" class="cancelbtn">Reset</button>
+                     <button type="submit" class="signupbtn">Add new User</button></td>
+                    </tr>
 			</table>
 		</form:form>
 	</div>

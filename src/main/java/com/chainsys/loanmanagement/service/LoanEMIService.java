@@ -14,20 +14,20 @@ public class LoanEMIService {
 	 @Autowired
 	 private LoanEMIdetailsRepository  loanemi;
 	 @Autowired
-		private LoanDetailsService LoanDetailsService;
+		private LoanDetailsService loanDetailsService;
 	 public List<LoanEMIdetails> getEmiDetails() {
 	        List<LoanEMIdetails> loanemiList = loanemi.findAll();
 	        return loanemiList;
 	    }
 	    public LoanEMIdetails saveEmi(LoanEMIdetails loanemidetails) {
 	    	LoanEMIdetails emI=loanemi.save(loanemidetails);
-	    	LoanDetails loanDetails=LoanDetailsService.findLoanDetailsById(emI.getUserId());
+	    	LoanDetails loanDetails=loanDetailsService.findLoanDetailsById(emI.getUserId());
 	    	loanDetails.setEmiPaid(Logic.getInstanceDate());
 	    	loanDetails.setTotalAmount(Logic.balanceEmIAmount(loanDetails.getTotalAmount(), emI.getPaymentAmount()));
 	    	loanDetails.setNoOfEmiPaid(Logic.increamentPaidEmI(loanDetails.getNoOfEmiPaid()));
 	    	loanDetails.setNoOfEmiPending(Logic.decreamentPendingEmI(loanDetails.getNoOfEmiPending()));
 	    	loanDetails.setDueDate(Logic.increamentDueDate(loanDetails.getDueDate()));
-	    	LoanDetailsService.saveLoanDetails(loanDetails);
+	    	loanDetailsService.saveLoanDetails(loanDetails);
 	        return emI;
 	    }
 

@@ -3,51 +3,75 @@
 <%@ taglib prefix="form" uri="http://www.springframework.org/tags/form"%>
 <%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core"%>
 <!DOCTYPE html>
-<html>
+<html lang="en">
 <head>
 <meta charset="ISO-8859-1">
 <title>User Details & Loan EMI Details Tables</title>
 <style>
-#loan1 {
-  font-family: Arial, Helvetica, sans-serif;
-  border-collapse: collapse;
-  width: 100%;
-}
-
-#loan1 td, # th {
-  border: 1px solid #4E5180;
-  padding: 8px;
-}
-
-#loan tr:nth-child(even){background-color: #F3E3C3;}
-
-#loan tr:hover {background-color: #FF7082;}
-
-#loan th {
-  padding-top: 12px;
-  padding-bottom: 12px;
-  text-align: left;
-  background-color: #800080;
-  color: white;
-}
-h1, h2, h3 {
-    text-align: center;
-}
-table, th, td {
-    border: 2px solid black;
-    border-collapse: collapse;
-    margin-left: auto;
-    margin-right: auto;
-    text-align: center;
-}
+<%@include file="css/admin-navbar.css"%>
+<%@include file="css/table-style.css"%>
 </style>
 </head>
 <body style="background-color: powderblue;">
-    <h1>Loan Management System</h1>
-    <h2>User Details and Loan EMI Details Form</h2>
+<div>
+<nav>
+			<div id="logo">LOAN MANAGEMENT SYSTEM (Admin)</div>
 
+			<label for="drop" class="toggle">Menu</label> <input type="checkbox"
+				id="drop" />
+			<ul class="menu">
+				<li><a href="/home/loanmanagementhomepage">Home</a></li>
+				<li>
+					<!-- First Tier Drop Down --> <label for="drop-1" class="toggle">Update
+						+</label> <a href="#">Update</a> <input type="checkbox" id="drop-1" />
+					<ul>
+						<li><a href="/loandetails/adminupdateloandetails">Update Loan Details</a></li>
+						<li><a href="/loan/adminupdateloan">Update Loan Type</a></li>
+						<li><a href="/user/updateuserdetails">Update Admin Details</a></li>
+					</ul>
+
+				</li>
+				<li>
+					 <label for="drop-1" class="toggle">List ALL+
+						</label> <a href="#">List All</a> <input type="checkbox" id="drop-1" />
+					<ul>
+						<li><a href="/user/getallusers">List All Users</a></li>
+						<li><a href="/loan/getallloan">List All Loans</a></li>
+					</ul>
+
+				</li>
+				
+				<li>
+				 <label for="drop-2" class="toggle">View
+						& Status+</label> <a href="#">Loan Status</a> <input type="checkbox"
+					id="drop-2" />
+					<ul>
+						<li><a href="/loandetails/loanapproved">Approved</a></li>
+						<li><a href="/loandetails/loanapplied">Applied</a></li>
+						<li>
+						<li><a href="/loandetails/loanrejected">Rejected</a></li>
+						<li><a href="/loandetails/loanprocessing">Processing</a></li>
+						<li>
+							<!-- Second Tier Drop Down --> <label for="drop-3" class="toggle">View
+								+</label> <a href="#">View</a> <input type="checkbox" id="drop-3" />
+
+							<ul>
+								<li><a href="/user/viewLoanDetailsanduserdetails">Loan Details By User ID</a></li>
+								<li><a href="/user/viewformuserandemidetails">EMI Details By User ID</a></li>
+								<li><a href="/loan/viewloanandloandetailsbyloanid">Loan Details By Loan ID</a></li>
+								<li><a href="/loan/viewloanandemidetailsbyloanid">EMI Details By Loan ID</a></li>
+							</ul>
+						</li>
+					</ul>
+				</li>
+				<li><a href="/home/loanmanagementhomepage">Sign Out</a></li>
+				<li><a href="#">About</a></li>
+			</ul>
+		</nav>
+</div>
     <div id="user">
-        <table id="loan" width=90%>
+       <h2>User and Loan EMI Details </h2>
+        <table id="loan" >
             <thead>
                 <tr>
                     <th>User ID</th>
@@ -85,7 +109,7 @@ table, th, td {
     </div>
 
     <div id="loan details">
-        <table id="loan" width=90%>
+        <table id="loan" >
             <thead>
                 <tr>
                     <th>User ID</th>

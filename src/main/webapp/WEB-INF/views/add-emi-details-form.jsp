@@ -3,13 +3,13 @@
 <%@ taglib prefix="form" uri="http://www.springframework.org/tags/form"%>
 <%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core"%>
 <!DOCTYPE html>
-<html>
+<html lang="en">
 <head>
 <meta charset="ISO-8859-1">
 <title>Add EMI Details Form</title>
 </head>
 <body>
- <h3>Loan EMI Details Registration form</h3>
+ <h3>Pay EMI </h3>
     <div id="root">
         <div id="form">
             <form:form action="addemidetails" method="post" modelAttribute="addemidetails">

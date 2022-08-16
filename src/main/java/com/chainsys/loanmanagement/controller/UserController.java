@@ -11,7 +11,6 @@ import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestParam;
 
-import com.chainsys.loanmanagement.dto.LoanAndLoanEMIdetailsDTO;
 import com.chainsys.loanmanagement.dto.UserDetailsAndLoanEMIdetailsDTO;
 import com.chainsys.loanmanagement.dto.UserDetailsLoanDetailsDTO;
 import com.chainsys.loanmanagement.model.UserDetails;
@@ -46,7 +45,7 @@ public class UserController {
      
 	 
 	@GetMapping("/updateuserform")
-	public String showUpdateForm(@RequestParam("userid") int id,Model model)
+	public String showUpdateForm(@RequestParam("userId") int id,Model model)
 	{
 		UserDetails userdetails=userservice.findUserById(id);
 		model.addAttribute("updateuser", userdetails);
@@ -88,7 +87,7 @@ public class UserController {
        
        
        @GetMapping("/getloandetailsbyuserid")
-       public String getLoanDetailsByUserId(@RequestParam("userid")int id,Model model)
+       public String getLoanDetailsByUserId(@RequestParam("userId")int id,Model model)
        {
     	   UserDetailsLoanDetailsDTO dto =userservice.getUserDetailsLoanDetails(id);
            model.addAttribute("getuserdetails" ,dto.getUserdetails());
@@ -103,7 +102,7 @@ public class UserController {
        }
        
        @GetMapping("/getemidetailsbyuserid")
-       public String getEMIdetailsByUserId(@RequestParam("userid") int id,Model model) {
+       public String getEMIdetailsByUserId(@RequestParam("userId") int id,Model model) {
     	   UserDetailsAndLoanEMIdetailsDTO useremidto =userservice.getUserDetailsAndLoanEMIdetails(id);
            model.addAttribute("getuser" ,useremidto.getUserdetails());
            model.addAttribute("loanemidetails",useremidto.getLoanemidetails());

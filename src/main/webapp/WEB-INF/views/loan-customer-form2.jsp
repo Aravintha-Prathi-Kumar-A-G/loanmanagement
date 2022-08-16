@@ -1,10 +1,10 @@
 <%@ page language="java" contentType="text/html; charset=ISO-8859-1"
     pageEncoding="ISO-8859-1"%>
 <!DOCTYPE html>
-<html>
+<html lang="en">
 <head>
 <meta charset="ISO-8859-1">
-<title>Insert title here</title>
+<title>Customer Page</title>
 <style type="text/css">
 <%@include file="css/customer-navbar.css"%>
 </style>
@@ -24,10 +24,9 @@
                     <a href="#">Loan</a>
                     <input type="checkbox" id="drop-1"/>
                     <ul>
-                        <li><a href="/loan/addloanform">Add New Loan Request</a></li>
+                        <li><a href="/loan/addloanform?userId=${userId}">Add New Loan Request</a></li>
                         <li><a href="/loandetails/addloandetailsform">Apply Loan</a></li>
-                        <li><a href="/user/updateuserdetails">Update Customer Details</a></li>
-                         <%-- <li><a href="/user/updateuserform?id=${userId}">Update Customer Details</a></li> --%>
+                        <li><a href="/user/updateuserform?userId=${userId}">Update Customer Details</a></li>
                     </ul> 
 
                 </li>
@@ -38,8 +37,8 @@
                 <a href="#">View</a>
                 <input type="checkbox" id="drop-2"/>
                 <ul>
-                    <li><a href="/user/viewLoanDetailsanduserdetails">View Loan Details</a></li>
-                    <li><a href="/user/viewformuserandemidetails">View EMI Details</a></li>
+                    <li><a href="/user/getloandetailsbyuserid?userId=${userId}">View Loan Details</a></li>
+                    <li><a href="/user/getemidetailsbyuserid?userId=${userId}">View EMI Details</a></li>
                     <li>
                                          <li><a href="#">Others</a></li>
                     <li>
@@ -51,11 +50,6 @@
                 <li><a href="#">About</a></li>
             </ul>
         </nav>
-
-
-       <!--  <p> A simple dropdown navigation menu made with CSS Only. Dropdowns are marked with a plus sign ( + )</p>
-        <p> Resize the screen to see the look if the screen is smaller then 768px </p> -->
-
 </div>
 </body>
 </html>

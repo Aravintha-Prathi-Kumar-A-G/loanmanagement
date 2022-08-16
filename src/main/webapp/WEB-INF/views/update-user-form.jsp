@@ -3,23 +3,12 @@
 <%@ taglib prefix="form" uri="http://www.springframework.org/tags/form"%>
 <%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core"%>
 <!DOCTYPE html>
-<html>
+<html lang="en">
 <head>
 <meta charset="ISO-8859-1">
 <title>Update user form</title>
 <style>
-h1, h2, h3 {
-	text-align: center;
-}
-div {
-    height: 200px;
-    width: 600px;
-    position: fixed;
-    top: 30%;
-    left: 50%;
-    margin-top: -100px;
-    margin-left: -200px;
-}
+<%@include file="css/forms.css"%>
 </style>
 <script type="text/javascript">
 function ageCount() {
@@ -97,7 +86,7 @@ function ageCount() {
                 </tr>
                 <tr>
                  <td>Pincode   </td>
-                <td> <form:input path="pincode" name="pincode number"  placeholder="enter your pincode" pattern="[1-9]{6}" title="enter your valid picode number"  required="true"/></td>
+                <td> <form:input path="pincode" name="pincode number"  placeholder="enter your pincode" pattern="[0-9]{6}" title="enter your valid pincode number"  required="true"/></td>
                 </tr>
                 <tr>
                <td>  Role  </td>
@@ -105,15 +94,15 @@ function ageCount() {
                          <form:radiobutton path="role" value="Admin"  required="true"/>Admin </td>
                 </tr>
               <tr>
-					<td>User Password :</td>
+					<td>User Password </td>
 					<td><form:password path="password" name="password"
 							pattern="^(?=.*[A-Za-z])(?=.*\d)(?=.*[@$!%*#?&])[A-Za-z\d@$!%*#?&]{8,}$"
 						title="password must contains 8 letters and eg.Asddjh@45687"	required="true" />
 				</tr>
                 <tr>
-               <td> <input type="submit" value="Update User Details" />
-                <input type="reset"> </td>
-                </tr>
+                        <td><button type="reset" class="cancelbtn">Reset</button>
+                     <button type="submit" class="signupbtn">Update User</button></td>
+                    </tr>
                 </table>
             </form:form>
         </div>

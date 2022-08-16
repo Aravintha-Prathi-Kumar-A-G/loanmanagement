@@ -17,16 +17,16 @@
 #loan th {
   padding-top: 12px;
   padding-bottom: 12px;
-  text-align: left;
+  text-align: center;
   background-color: #800080;
   color: white;
 }
-/* #loan{
+table{
     text-align: center;
     width: 90%;
 }
- */
+ 
  table, th, td {
-    border: 1px solid black;
+    border: 2px solid black;
     border-collapse: collapse;
 } 
