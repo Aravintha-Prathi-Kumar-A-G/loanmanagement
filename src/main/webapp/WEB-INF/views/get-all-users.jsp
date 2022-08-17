@@ -45,21 +45,21 @@ table, th, td {
 <body style="background-color: powderblue;">
 <h1>List All Users</h1>
 	<div id="table root">
-		<table id="loan">
+		<table id="loan"><caption></caption>
 			<thead>
 				<tr>
-					<th>User ID</th>
-					<th>Users Name</th>
-					<th>Gender</th>
-					<th>Age</th>
-					<th>Date Of Birth</th>
-					<th>Phone Number</th>
-					<th>Pancard Number</th>
-					<th>Account Number</th>
-					<th>Email</th>
-					<th>Address</th>
-					<th>Pincode</th>
-					<th>Role</th>
+					<th scope="col">User ID</th>
+					<th scope="col">Users Name</th>
+					<th scope="col">Gender</th>
+					<th scope="col">Age</th>
+					<th scope="col">Date Of Birth</th>
+					<th scope="col">Phone Number</th>
+					<th scope="col">Pancard Number</th>
+					<th scope="col">Account Number</th>
+					<th scope="col">Email</th>
+					<th scope="col">Address</th>
+					<th scope="col">Pincode</th>
+					<th scope="col">Role</th>
 				</tr>
 			</thead>
 			<tbody>

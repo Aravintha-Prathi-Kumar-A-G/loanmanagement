@@ -22,8 +22,11 @@ public class LoanDetailsController {
 	private LoanDetailsService loandetservice;
 
 	@GetMapping("/addloandetailsform")
-	public String loanDetailsAddForm(Model model) {
+	public String loanDetailsAddForm(@RequestParam("userId")int userId,@RequestParam("loanId")int loanId, Model model)
+	{	
 		LoanDetails loandetails = new LoanDetails();
+		loandetails.setLoanId(loanId);
+		loandetails.setUserId(userId);
 		model.addAttribute("addloandetails", loandetails);
 		return "add-loandetails-form";
 	}
@@ -31,7 +34,7 @@ public class LoanDetailsController {
 	@PostMapping("/addloandetails")
 	public String addNewLoanDetails(@ModelAttribute("addloandetails") LoanDetails loandetails) {
 		loandetservice.saveLoanDetails(loandetails);
-		return "successfully-registerd";
+		return "successfully-applied";
 	}
 	
 	@GetMapping("/adminupdateloandetails")

@@ -22,8 +22,10 @@ public class Loan {
 	private int loanId;
 	@Column(name="loan_type")
 	private String loanType ;
-	
-//---------------------------------------------------------------
+	@Column(name="user_id")
+	private int userId;
+
+	//---------------------------------------------------------------
 	@OneToMany(mappedBy ="loan",fetch=FetchType.LAZY)
 	private List<LoanDetails> loandetails; // fk class
 	
@@ -64,9 +66,12 @@ public class Loan {
 		this.loanType = loanType;
 	}
 
-	
-	
-	
-	
+	public int getUserId() {
+		return userId;
+	}
 
+	public void setUserId(int userId) {
+		this.userId = userId;
+	}
+	
 }

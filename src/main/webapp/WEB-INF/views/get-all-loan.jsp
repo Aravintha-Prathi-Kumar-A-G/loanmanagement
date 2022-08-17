@@ -45,16 +45,18 @@ table, th, td {
 <body style="background-color: powderblue;">
 <h1>List All Loans</h1>
 	<div id="table root">
-		<table id="loan">
+		<table id="loan"><caption></caption>
 			<thead>
 				<tr>
-					<th>Loan ID</th>
-					<th>Loan Type</th>
+					<th scope="col">User ID</th>
+					<th scope="col">Loan ID</th>
+					<th scope="col">Loan Type</th>
 				</tr>
 			</thead>
 			<tbody>
 				<c:forEach var="loan" items="${getallloan}">
 					<tr>
+						<td>${loan.userId}</td>
 						<td>${loan.loanId}</td>
 						<td>${loan.loanType}</td>
 					</tr>

@@ -70,23 +70,23 @@
 		</nav>
 </div>
 	<div id="table root">
-		<table id="loan" >
+		<table id="loan" ><caption></caption>
 			<thead>
 				<tr>
-					<th>User ID</th>
-					<th>Loan ID</th>
-					<th>Loan Date</th>
-					<th>Loan Amount</th>
-					<th>No of EMI's</th>
-					<th>Due Date</th>
-					<th>Paid Date</th>
-					<th>Paid EMI</th>
-					<th>Pending EMI</th>
-					<th>Interest</th>
-					<th>EMI Amount </th>
-					<th>Total Amount</th>
-					<th>Loan Status</th>
-					<th>UPDATE</th>
+					<th scope="col">User ID</th>
+					<th scope="col">Loan ID</th>
+					<th scope="col">Loan Date</th>
+					<th scope="col">Loan Amount</th>
+					<th scope="col">No of EMI's</th>
+					<th scope="col">Due Date</th>
+					<th scope="col">Paid Date</th>
+					<th scope="col">Paid EMI</th>
+					<th scope="col">Pending EMI</th>
+					<th scope="col">Interest</th>
+					<th scope="col">EMI Amount </th>
+					<th scope="col">Total Amount</th>
+					<th scope="col">Loan Status</th>
+					<th scope="col">UPDATE</th>
 				</tr>
 			</thead>
 			<tbody>

@@ -38,22 +38,22 @@
 	<div id="form">
 		<form:form action="adduserdetails" method="post"
 			modelAttribute="adduser">
-			<table>
+			<table><caption></caption>
 				<tr>
-					<td>UserId :</td>
+					<th scope="col">UserId </th>
 					<td><form:input path="userId" placeholder="enter User ID"
 							pattern="[0-9]{4}" title="user ID only contains Numbers "
 							required="true" /></td>
 				</tr>
 				<tr>
-					<td>Name :</td>
+					<th scope="col">Name </th>
 					<td><form:input path="userName" name="userName"
 							placeholder="enter your name"
 							title="Name can't be empty or must contain only alphabets"
 							pattern="^[a-zA-Z]+$" required="true" /></td>
 				</tr>
 				<tr>
-					<td>Gender :</td>
+					<th scope="col">Gender :</th>
 					<td><form:radiobutton path="gender" name="gender" value="Male"
 							required="true" />Male <form:radiobutton path="gender"
 							name="gender" value="Female" required="true" />Female <form:radiobutton
@@ -61,30 +61,30 @@
 					</td>
 				</tr>
 				<tr>
-					<td>Date Of Birth :</td>
+					<th scope="col">Date Of Birth :</th>
 					<td><form:input type="date" path="dob" name="dob"
 							required="true" /></td>
 				</tr>
 				<tr>
-					<td>Age :</td>
+					<th scope="col">Age :</th>
 					<td><form:input path="age" name="age"
 							onclick="ageCount(this.form)" readonly="true" requried="true" /></td>
 				</tr>
 				<tr>
-					<td>Phone Number :</td>
+					<th scope="col">Phone Number :</th>
 					<td><form:input path="phoneNumber" pattern="[0-9]{10}"
 							title="please enter your Ten Digit phone numbers "
 							required="true" /></td>
 				</tr>
 				<tr>
-					<td>Email :</td>
+					<th scope="col">Email :</th>
 					<td><form:input type="email" path="email" name="email"
 							placeholder="eg.aga@gmail.com"
 							pattern="^[A-Za-z0-9._%+-]+@[A-Za-z0-9.-]+\\.[A-Za-z]{2,6}$"
 							title="Invalid email" required="true" /></td>
 				</tr>
 				<tr>
-					<td>PanCard Number :</td>
+					<th scope="col">PanCard Number :</th>
 					<td><form:input path="pancardNumber" name="pancardNumber"
 							pattern="[A-Z]{5}[0-9]{4}[A-Z]{1}"
 							title="please enter valid Pancard Number"
@@ -92,32 +92,32 @@
 				</tr>
 				<tr>
 
-					<td>Account Number :</td>
+					<th scope="col">Account Number :</th>
 					<td><form:input type="text" path="accountNumber"
 							name="accountNumber" placeholder="enter your Bank Account number"
 							pattern="[0-9]{9,18}" title="Account number must be 9 to 18 "
 							required="true" /></td>
 				</tr>
 				<tr>
-					<td>Address :</td>
+					<th scope="col">Address :</th>
 					<td><form:textarea path="address" name="address" cols="50"
 							rows="6" title="Enter your valid address" required="true" /></td>
 				</tr>
 				<tr>
-					<td>Pincode :</td>
+					<th scope="col">Pincode :</th>
 					<td><form:input path="pincode" name="pincode number"
 							placeholder="enter your pincode"
 							pattern="^[0-9]{6}"
 							title="enter your valid picode number" required="true" /></td>
 				</tr>
 				<tr>
-					<td>Role :</td>
+					<th scope="col">Role :</th>
 					<td><form:radiobutton path="role" value="User" required="true" />User
 						<form:radiobutton path="role" value="Admin" required="true" />Admin
 					</td>
 				</tr>
 				<tr>
-					<td>User Password :</td>
+					<th scope="col">User Password :</th>
 					<td><form:password path="password" name="password"
 							pattern="^(?=.*[A-Za-z])(?=.*\d)(?=.*[@$!%*#?&])[A-Za-z\d@$!%*#?&]{8,}$"
 						title="password must contains 8 letters and eg.Asddjh@45687"	required="true" />

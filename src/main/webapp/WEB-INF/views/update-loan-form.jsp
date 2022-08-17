@@ -13,9 +13,11 @@
     <div id="root">
         <div id="form">
             <form:form action="updateloan" method="post" modelAttribute="updateloan">
-                
+                 <div>
+                User ID :<form:input type="text" path="userId" pattern="[0-9]{4]" required="true" />
+                </div>
                 <div>
-                Loan ID :<form:input type="text" path="loanId" placeholder="enter Loan ID" />
+                Loan ID :<form:input type="text" path="loanId" placeholder="enter Loan ID" readonly="true" />
                 </div>
                 <br>
                 <div>

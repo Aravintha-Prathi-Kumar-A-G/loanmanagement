@@ -24,10 +24,11 @@ public class LoanController {
 private LoanService loanservice;
 	
 	@GetMapping("/addloanform")
-	public String loanAddForm(Model model)
+	public String loanAddForm(@RequestParam("userId")int userId,Model model)
 	{
 		Loan loan = new Loan();
 		model.addAttribute("addnewloan",loan);
+		loan.setUserId(userId);
 		return  "add-loan-form";
 	}
 	
@@ -35,8 +36,10 @@ private LoanService loanservice;
 	public String addNewLoan(@ModelAttribute("addnewloan") Loan loan)
 	{
 		loanservice.saveLoan(loan);
-		//return "redirect:/loan/getallloan";
-		return "redirect:/loandetails/addloandetailsform";
+		int userId=loan.getUserId();
+		int loanId=loan.getLoanId();
+		System.out.println(loanId);
+		return "redirect:/loandetails/addloandetailsform?userId="+userId+"&loanId="+loanId;
 	}
 	
 	@GetMapping("/adminupdateloan")

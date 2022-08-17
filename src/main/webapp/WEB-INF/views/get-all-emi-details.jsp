@@ -44,14 +44,14 @@ table, th, td {
 </head>
 <body style="background-color: powderblue;">
 	<div id="table root">
-		<table id="loan">
+		<table id="loan"><caption></caption>
 			<thead>
 				<tr>
-					<th>User ID</th>
-					<th>Loan ID</th>
-					<th>EMI Date</th>
-					<th>Payment Amount</th>
-					<th>Payment ID</th>
+					<th scope="col">User ID</th>
+					<th scope="col">Loan ID</th>
+					<th scope="col">EMI Date</th>
+					<th scope="col">Payment Amount</th>
+					<th scope="col">Payment ID</th>
 				</tr>
 			</thead>
 			<tbody>

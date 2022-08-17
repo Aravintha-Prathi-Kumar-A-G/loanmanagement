@@ -14,7 +14,7 @@
 		<div class="bg"></div>
 		<form action="userpage" method="post" modelAttribute="signin">
 			<header>
-				<img src="https://totalbanksolutions.com/wp-content/uploads/2021/07/lms-featured-image.svg">
+				<img src="https://totalbanksolutions.com/wp-content/uploads/2021/07/lms-featured-image.svg" alt="">
 			</header>
 			<br> <br>
 			<div class="inputs">

@@ -71,15 +71,17 @@
 </div>
     <div id="loan">
    <h2>Loan And Loan EMI Details Form</h>
-        <table id="loan" >
+        <table id="loan" ><caption></caption>
             <thead>
                 <tr>
-                   <th>Loan ID</th>
-					<th>Loan Type</th>
+                	<th scope="col">User ID</th>
+                   <th scope="col">Loan ID</th>
+					<th scope="col">Loan Type</th>
                 </tr>
             </thead>
             <tbody>
                 <tr>
+                	<td>${getloan.userId}</td>
                   <td>${getloan.loanId}</td>
 				  <td>${getloan.loanType}</td>
                    
@@ -91,14 +93,14 @@
 
 <br>
     <div id="loan EMI details">
-        <table id="loan" >
+        <table id="loan" ><caption></caption>
             <thead>
                 <tr>
-                   <th>User ID</th>
-					<th>Loan ID</th>
-					<th>EMI Date</th>
-					<th>Payment Amount</th>
-					<th>Payment ID</th>
+                   <th scope="col">User ID</th>
+					<th scope="col">Loan ID</th>
+					<th scope="col">EMI Date</th>
+					<th scope="col">Payment Amount</th>
+					<th scope="col">Payment ID</th>
                 </tr>
             </thead>
             <tbody>

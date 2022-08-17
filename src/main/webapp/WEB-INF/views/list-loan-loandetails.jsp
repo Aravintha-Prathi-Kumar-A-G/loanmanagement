@@ -71,15 +71,17 @@
 </div>
     <div id="loan">
     <h2>Loan And Loan Details Form</h2>
-        <table id="loan">
+        <table id="loan"><caption></caption>
             <thead>
                 <tr>
-                   <th>Loan ID</th>
-					<th>Loan Type</th>
+                <th scope="col">User ID</th>
+                   <th scope="col">Loan ID</th>
+					<th scope="col">Loan Type</th>
                 </tr>
             </thead>
             <tbody>
                 <tr>
+                <td>${getloan.userId}</td>
                   <td>${getloan.loanId}</td>
 				  <td>${getloan.loanType}</td>
                    
@@ -89,22 +91,22 @@
     </div>
 
     <div id="loan details">
-        <table id="loan">
+        <table id="loan"><caption></caption>
             <thead>
                 <tr>
-                    <th>User ID</th>
-					<th>Loan ID</th>
-					<th>Loan Date</th>
-					<th>Loan Amount</th>
-					<th>No of EMI's</th>
-					<th>Due Date</th>
-					<th>EMI paid Date</th>
-					<th>No of EMI Paid in Month</th>
-					<th>No of EMI Pending in Month</th>
-					<th>Interest</th>
-					<th>EMI Amount per Month</th>
-					<th>Total Amount</th>
-					<th>Loan Status</th>
+                    <th scope="col">User ID</th>
+					<th scope="col">Loan ID</th>
+					<th scope="col">Loan Date</th>
+					<th scope="col">Loan Amount</th>
+					<th scope="col">No of EMI's</th>
+					<th scope="col">Due Date</th>
+					<th scope="col">EMI paid Date</th>
+					<th scope="col">EMI Paid</th>
+					<th scope="col">EMI Pending</th>
+					<th scope="col">Interest</th>
+					<th scope="col">EMI Amount</th>
+					<th scope="col">Total Amount</th>
+					<th scope="col">Loan Status</th>
                 </tr>
             </thead>
             <tbody>

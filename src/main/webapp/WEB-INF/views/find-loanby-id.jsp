@@ -13,13 +13,15 @@
     <div id="root">
         <div id="form">
             <form:form action="" method="post" modelAttribute="findloanbyid">
-                
+                  <div>
+                User ID :<form:input type="text" path="userId" placeholder="enter Loan ID" readonly="true"/>
+                </div>
                 <div>
-                Loan ID :<form:input type="text" path="loanId" placeholder="enter Loan ID"/>
+                Loan ID :<form:input type="text" path="loanId" placeholder="enter Loan ID" readonly="true"/>
                 </div>
                 <br>
                 <div>
-                Loan Type : <form:input type="text" path="loanType" placeholder="enter Loan Type" />
+                Loan Type : <form:input type="text" path="loanType" placeholder="enter Loan Type" readonly="true" />
                 </div>
                 <br>
             </form:form>

@@ -8,6 +8,6 @@
 </head>
 <body style="background-color: #808080;">
 <h1>Your Loan Application Successfully Submitted...!</h1>
-<a href="/home/customerform" >Home</a>
+<a href="/home/customerform?userId=${userId}">Home</a>
 </body>
 </html>
