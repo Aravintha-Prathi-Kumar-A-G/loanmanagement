@@ -12,7 +12,7 @@ public class LoanAndLoanDetailsDTO {
 	
 	@Autowired
 	private Loan loan;
-	private List <LoanDetails> loanlist = new ArrayList <LoanDetails> ();
+	private List <LoanDetails> loanlist = new ArrayList <> ();
 	
 	public Loan getLoan() {
 		return loan;

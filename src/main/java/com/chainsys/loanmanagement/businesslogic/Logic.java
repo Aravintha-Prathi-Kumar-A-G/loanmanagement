@@ -18,7 +18,7 @@ public class Logic {
 	}
 	public static Date increamentDueDate(Date date) {
 		String date1=date+"";
-		String dateArray[]=date1.split("-");
+		String[] dateArray=date1.split("-");
 		int month=Integer.parseInt(dateArray[1]);
 		int year=Integer.parseInt(dateArray[0]);
 		if(month<12 && month>0) {
