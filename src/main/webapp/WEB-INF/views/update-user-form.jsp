@@ -2,13 +2,14 @@
     pageEncoding="ISO-8859-1"%>
 <%@ taglib prefix="form" uri="http://www.springframework.org/tags/form"%>
 <%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core"%>
+<%@ page import="com.chainsys.loanmanagement.businesslogic.Logic"%>
 <!DOCTYPE html>
 <html lang="en">
 <head>
 <meta charset="ISO-8859-1">
 <title>Update user form</title>
 <style>
-<%@include file="css/forms.css"%>
+<%@include file ="css/forms.css"%>
 </style>
 <script type="text/javascript">
 function ageCount() {
@@ -40,8 +41,8 @@ function ageCount() {
             <form:form action="adduserdetails" method="post" modelAttribute="updateuser">
                 <table class ="center"><caption></caption>
                 <tr>
-                <th scope="col">UserId </th>
-               <td> <form:input path="userId" placeholder="enter User ID" pattern="[0-9]{4}"  title="user ID only contains Numbers " required="true" /></td>
+                <th scope="col">User ID </th>
+               <td> <form:input path="userId" placeholder="enter User ID" pattern="[0-9]{4}"  title="user ID only contains Numbers " required="true" readonly="true" /></td>
                 </tr>
                 <tr>
                 <th scope="col">Name </th>
@@ -55,8 +56,10 @@ function ageCount() {
                          <form:radiobutton path="gender" name="gender" value="others" required="true" />Others </td>
                 </tr>
                  <tr>
-                <th scope="col"> Date Of Birth  </th> 
-              <td>  <form:input type="date"  path="dob" name="dob"  required="true" /></td>
+                <th scope="col">Date Of Birth </th>
+					<td><form:input type="date" path="dob" id="dob" name="dob"
+							min="<%=Logic.getMaxAge()%>" max="<%=Logic.getMinAge()%>"
+							required="true"/></td>
                 </tr>
                 <tr>
                 <th scope="col">Age </th>
@@ -88,11 +91,11 @@ function ageCount() {
                  <th scope="col">Pincode   </th>
                 <td> <form:input path="pincode" name="pincode number"  placeholder="enter your pincode" pattern="[0-9]{6}" title="enter your valid pincode number"  required="true"/></td>
                 </tr>
-                <tr>
+			<%--   <tr>
                <th scope="col"> Role  </th>
-                <td> <form:radiobutton path="role" value="User"  required="true"/>User
-                         <form:radiobutton path="role" value="Admin"  required="true"/>Admin </td>
-                </tr>
+                <td> <form:radiobutton path="role" value="User"  required="true" readonly="true"/>User
+                         <form:radiobutton path="role" value="Admin"  required="true" readonly="true"/>Admin </td>
+                </tr> --%>
               <tr>
 					<th scope="col">User Password </th>
 					<td><form:password path="password" name="password"
@@ -100,11 +103,16 @@ function ageCount() {
 						title="password must contains 8 letters and eg.Asddjh@45687"	required="true" />
 				</tr>
                 <tr>
-                        <td><button type="reset" class="cancelbtn">Reset</button>
-                     <button type="submit" class="signupbtn">Update User</button></td>
-                    </tr>
-                </table>
-            </form:form>
+               </table>
+				<div class="buttons2">
+				<table ><caption></caption>
+				<tr><th ></th>
+					<td><button type="reset" class="cancelbtn">Reset</button>
+						<button type="submit" class="signupbtn">Update</button></td>
+				</tr>
+			</table>
+			</div>
+		</form:form>
         </div>
 </body>
 </html>

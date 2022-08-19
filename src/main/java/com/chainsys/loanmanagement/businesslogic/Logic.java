@@ -3,6 +3,7 @@ package com.chainsys.loanmanagement.businesslogic;
 import java.sql.Date;
 import java.text.ParseException;
 import java.text.SimpleDateFormat;
+import java.time.LocalDate;
 import java.util.Calendar;
 
 public class Logic {
@@ -51,4 +52,13 @@ public class Logic {
         return date;
     }
 
+	public static LocalDate getMinAge() {
+        LocalDate date = LocalDate.now();
+        return date.minusYears(18);
+    }
+	public static LocalDate getMaxAge() {
+        LocalDate date = LocalDate.now();
+        return date.minusYears(62);
+    }
+	
 }

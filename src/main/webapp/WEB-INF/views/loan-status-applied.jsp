@@ -69,6 +69,9 @@
 			</ul>
 		</nav>
 </div>
+<br>
+<br>
+<br>
 	<div id="table root">
 		<table id="loan" ><caption></caption>
 			<thead>

@@ -38,7 +38,6 @@ private LoanService loanservice;
 		loanservice.saveLoan(loan);
 		int userId=loan.getUserId();
 		int loanId=loan.getLoanId();
-		System.out.println(loanId);
 		return "redirect:/loandetails/addloandetailsform?userId="+userId+"&loanId="+loanId;
 	}
 	

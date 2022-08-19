@@ -7,20 +7,21 @@
 <meta charset="ISO-8859-1">
 <title>VIEW LOAN AND EMI DETAILS</title>
 <style>
-* {
-    text-align: center;
-}
+<%@include file="css/findbyid.css"%>
 </style>
 </head>
 <body>
-    <h1> Loan Management System</h1>
-    <h3>VIEW LOAN AND EMI DETAILS BY LOAN ID</h3>
-            <form action="/loan/getemidetailsbyloan"  method="get">
-                <div>
-                   LOAN ID : <input type="text" name="loanid" />
-                </div>
-                <br>
-                <input type="submit" value="GET" />
-            </form>
+       <form action="/loan/getemidetailsbyloan" method="get">
+		<div class="container">
+			<div class="brand-title">Loan & EMI Details</div>
+			<div class="inputs">
+				<label>Find By Loan ID</label> <input type="text" name="loanid"
+					placeholder="enter loan Id" />
+				<button type="submit">Get Details</button>
+				</div>
+				</div>
+				</form>
+            
+         
 </body>
 </html>

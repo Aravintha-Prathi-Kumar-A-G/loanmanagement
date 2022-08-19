@@ -7,20 +7,19 @@
 <meta charset="ISO-8859-1">
 <title> update LOAN TYPE details</title>
 <style>
-* {
-    text-align: center;
-}
+<%@include file="css/findbyid.css"%>
 </style>
 </head>
 <body>
-    <h1>Online Loan Management System</h1>
-    <h3> Update Loan Type </h3>
-            <form action="/loan/updateloan"  method="get">
-                <div>
-                    Loan ID : <input type="text" name="loanid" />
-                </div>
-                <br>
-                <input type="submit" value="submit" />
-            </form>
+            <form action="/loan/updateloan" method="get">
+		<div class="container">
+			<div class="brand-title">Update Loan Type</div>
+			<div class="inputs">
+				<label>Find By Loan ID</label> <input type="text" name="loanid"
+					placeholder="enter Loan Id" />
+				<button type="submit">Update Details</button>
+				</div>
+				</div>
+				</form>
 </body>
 </html>

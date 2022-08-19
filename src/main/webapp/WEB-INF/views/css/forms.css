@@ -1,6 +1,16 @@
 @charset "ISO-8859-1";
-body {font-family: Arial, Helvetica, sans-serif;}
-form {box-sizing: border-box; margin: auto; width: 50%; text-align: center;}
+body {font-family: Arial, Helvetica, sans-serif;
+background-image:
+		url("https://wallpaperaccess.com/full/732287.png");
+	min-height: 680px;
+	background-position: center;
+	background-repeat: no-repeat;
+	background-size: cover;
+	position: relative;
+}
+form {box-sizing: border-box; margin: auto; width: 50%; text-align: center;
+justify-content: space between;
+}
 
 input[type=text], input[type=password],input[type=number],input[type=email],
 input[type=date],input[type=textarea],input[type=select] {
@@ -10,6 +20,7 @@ input[type=date],input[type=textarea],input[type=select] {
   display: inline-block;
   border: none;
   background: #f1f1f1;
+  text-align : center;
 }
 
 input[type=text]:focus, input[type=password]:focus,input[type=number]:focus,
@@ -36,7 +47,9 @@ button:hover {
   padding: 14px 20px;
   background-color: #f44336;
 }
-
+.buttons2{
+	margin-left: 35%;
+}
 .cancelbtn, .signupbtn {
   float: right;
   width: 50%;
@@ -65,7 +78,9 @@ table.center {
 td,h1,h2 {
 text-align: center;
 }
-
+td.buttons2{
+  text-align: center;
+}
 /*the container must be positioned relative:*/
 .custom-select {
   position: relative;

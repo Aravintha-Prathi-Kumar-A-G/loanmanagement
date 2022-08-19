@@ -1,5 +1,5 @@
 <%@ page language="java" contentType="text/html; charset=ISO-8859-1"
-    pageEncoding="ISO-8859-1"%>
+	pageEncoding="ISO-8859-1"%>
 <%@ taglib prefix="form" uri="http://www.springframework.org/tags/form"%>
 <!DOCTYPE html>
 <html lang="en">
@@ -7,20 +7,19 @@
 <meta charset="ISO-8859-1">
 <title>customer find emi details</title>
 <style>
-* {
-    text-align: center;
-}
+<%@include file="css/findbyid.css"%>
 </style>
 </head>
 <body>
-    <h1>Online Loan Management System</h1>
-    <h3>view userdetails with emi details</h3>
-            <form action="getemidetailsbyuserid"  method="get">
-                <div>
-                    User ID : <input type="text" name="userId" />
-                </div>
-                <br>
-                <input type="submit" value="find emi details" />
-            </form>
+	<form action="/user/getemidetailsbyuserid" method="get">
+		<div class="container">
+			<div class="brand-title">User & EMI Details</div>
+			<div class="inputs">
+				<label>Find By User ID</label> <input type="text" name="userId"
+					placeholder="enter user Id" />
+				<button type="submit">Get Details</button>
+				</div>
+				</div>
+				</form>
 </body>
 </html>

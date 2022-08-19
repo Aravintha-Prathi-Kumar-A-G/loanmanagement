@@ -8,15 +8,7 @@
 <meta charset="ISO-8859-1">
 <title>Update Loan Details</title>
 <style>
-div {
-	margin-bottom: 10px;
-}
-
-label {
-	display: inline-block;
-	width: 150px;
-	text-align: right;
-}
+<%@include file="css/update-loandetails.css"%>
 </style>
 <script type="text/javascript">
 	function emiCalculation() {
@@ -44,68 +36,55 @@ label {
     </script>
 </head>
 <body>
-	<h3>Update Loan Details</h3>
 	<div id="form">
+	<div class="container">
 		<form:form action="updateloandetails" method="post"
 			modelAttribute="loandetailsupdate">
-
+			<div class="form">
+				<h1>Update Loan Details</h1>
 			<div>
-				<div>
-					<label for="userId">User ID</label>
+					<label for="userId">User ID</label><br>
 					<form:input type="number" path="userId" pattern="[0-9]{4}"
 						title="user ID only contains Numbers" placeholder="enter User ID" 
 						require="true" />
-				</div>
 			</div>
 			<br>
-			<div>
 				<div>
-					<label for="loanId">Loan ID</label>
+					<label for="loanId">Loan ID</label><br>
 					<form:input path="loanId" placeholder="enter Loan ID" />
 				</div>
-			</div>
 			<br>
 			<div>
-				<div>
 					<label for="loanDate">LOAN Issue Date </label>
 					<form:input type="date" path="loanDate" require="true" />
 				</div>
-			</div>
 			<br>
 			<div>
-				<div>
-					<label for="noOfEmis">No Of EMI's In Month</label>
+					<label for="noOfEmis">No Of EMI's</label>
 					<form:select path="noOfEmis" id="noOfEmis">
 						<form:option value="12" label="12 Months" required="true" />
 						<form:option value="24" label="24 Months" required="true" />
 						<form:option value="36" label="36 Months" required="true" />
 						<form:option value="48" label="48 Months" required="true" />
 					</form:select>
-				</div>
 			</div>
 			<br>
 			<div>
-				<div>
-					<label for="noOfEmiPaid">No Of EMI's Paid</label>
+					<label for="noOfEmiPaid">Paid EMI's</label>
 					<form:input type="number" path="noOfEmiPaid"
 						placeholder="Enter no of emi's paid in month" readonly="true" />
-				</div>
 			</div>
 			<br>
 			<div>
-				<div>
-					<label for="noOfEmiPending">No Of EMI's Pending</label>
+					<label for="noOfEmiPending">Pending EMI's</label>
 					<form:input type="number" path="noOfEmiPending" id="noOfEmiPending"
 					 onclick="pendingEMI(this.form)" readonly="true" />
-				</div>
 			</div>
 			<br>
 			 <div>
-				<div>
-					<label for="dueDate">EMI Due Date</label>
+					<label for="dueDate">Due Date</label><br>
 					<form:input type="date" path="dueDate"
 						placeholder="enter EMI Due Date" required="true"  />
-				</div>
 			</div>
 			<br>
 			<%-- <div>
@@ -117,7 +96,6 @@ label {
 			</div>
 			<br> --%>
 			<div>
-				<div>
 					<label for="loanStatus">Loan Status</label>
 					<form:select path="loanStatus">
 						<form:option value="Applied" label="Applied" required="true" />
@@ -125,52 +103,47 @@ label {
 						<form:option value="Approved" label="Approved" required="true" />
 						<form:option value="Rejected" label="Rejected" required="true" />
 					</form:select>
-				</div>
 			</div>
 			<br>
-			<div>
 				<div>
 					<label for="loanAmount">Loan Amount</label>
 					<form:input type="number" path="loanAmount" id="loanAmount"
 						name="loanAmount" onchange="emiCalculation()"
 						title="Loan Amount only contains numbers"
 						placeholder="Enter Loan Amount" />
-				</div>
 			</div>
 			<br>
 			<div>
-				<div>
-					<label for="interest">Interest</label>
-					<form:input type="number" title="It contains only numbers"
-						path="interest" id="interest" name="interest"
+					<label for="interest">Interest %</label>
+					<form:input type="text" title="It contains only numbers"
+						path="interest" id="interest" pattern="[+-]?([0-9]+([.][0-9]*)?|[.][0-9]+)" name="interest"
 						onchange="emiCalculation()" placeholder="enter Interest per Loan " />
-				</div>
 			</div>
 			<br>
 			<div>
-				<div>
-					<label for="monthlyEMIAmount">EMI Amount Per Month</label>
+					<label for="monthlyEMIAmount">EMI Amount</label>
 					<form:input type="number" path="monthlyEMIAmount"
 						id="monthlyEMIAmount" name="monthlyEMIAmount"
 						onchange="emiCalculation(this.form)" required="true"
 						readonly="true" />
-				</div>
 			</div>
 			<br>
 			<div>
-				<div>
 					<label for="totalAmount">Total Amount</label>
 					<form:input path="totalAmount" id="totalAmount" name="totalAmount"
 						onchange="emiCalculation(this.form)" required="true"
 						readonly="true" />
-				</div>
 			</div>
 			<br>
 			<div>
-				<input type="submit" value="Update  Loan Details" /> <input
-					type="reset">
-			</div>
+                <button type="submit" value="Update Loan Details" class="signupbtn" onclick="msg()">Update</button>
+                <br>
+                <br>
+                <button type="reset" class="cancelbtn">Reset</button>
+                </div>
+                </div>
 		</form:form>
+		</div>
 	</div>
 </body>
 </html>

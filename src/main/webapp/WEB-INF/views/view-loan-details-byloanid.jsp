@@ -7,43 +7,19 @@
 <meta charset="ISO-8859-1">
 <title>VIEW LOAN  AND  LOAN DETAILS</title>
 <style>
-#loan1 {
-  font-family: Arial, Helvetica, sans-serif;
-  border-collapse: collapse;
-  width: 100%;
-}
-
-#loan1 td, # th {
-  border: 1px solid #4E5180;
-  padding: 8px;
-}
-
-#loan tr:nth-child(even){background-color: #F3E3C3;}
-
-#loan tr:hover {background-color: #FF7082;}
-
-#loan th {
-  padding-top: 12px;
-  padding-bottom: 12px;
-  text-align: left;
-  background-color: #800080;
-  color: white;
-}
-* {
-    text-align: center;
-}
-</style>
+<%@include file="css/findbyid.css"%>
 </style>
 </head>
 <body>
-    <h1>Online Loan Management System</h1>
-    <h3>VIEW LOAN & Loan DETAILS By Loan ID</h3>
-            <form action="/loan/getloandetailsbyloan"  method="get">
-                <div>
-                    Loan ID : <input type="text" name="loanid" />
-                </div>
-                <br>
-                <input type="submit" value="GET" />
-            </form>
+            	<form action="/loan/getloandetailsbyloan" method="get">
+		<div class="container">
+			<div class="brand-title">Loan & Loan Details</div>
+			<div class="inputs">
+				<label>Find By Loan ID</label> <input type="text" name="loanid"
+					placeholder="enter loan Id" />
+				<button type="submit">Get Details</button>
+				</div>
+				</div>
+				</form>
 </body>
 </html>

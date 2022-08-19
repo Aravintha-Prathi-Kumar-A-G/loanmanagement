@@ -7,27 +7,31 @@
 <head>
 <meta charset="ISO-8859-1">
 <title>Add EMI Details Form</title>
+<style>
+<%@include file="css/form-style2.css"%>
+</style>
 </head>
 <body>
- <h3>Pay EMI </h3>
-    <div id="root">
-        <div id="form">
+ 
+    <div id="registration-form" class="center">
+        <div id="form" class='fieldset'>
             <form:form action="addemidetails" method="post" modelAttribute="addemidetails">
-                
+            
+                <h3> EMI Payment</h3>
                 <div>
-                User ID :<form:input type="number" path="userId" placeholder="enter User ID" readonly="true"/>
+                User ID <form:input type="number" path="userId" placeholder="enter User ID" readonly="true"/>
                 </div>
                 <br>
                 <div>
-                Loan ID : <form:input type="number" path="loanId" placeholder="enter Loan ID" readonly="true" />
+                Loan ID  <form:input type="number" path="loanId" placeholder="enter Loan ID" readonly="true" />
                 </div>
                 <br>
                 <div>
-                EMI Date : <form:input type="date" path="emiDate" placeholder="enter loan issue date" readonly="true"/>
+                Payment Date  <form:input type="date" path="emiDate" placeholder="enter loan issue date" readonly="true"/>
                 </div>
                 <br>
                 <div>
-                Payment Amount : <form:input type="number" path="paymentAmount" required="true"/>
+                Payment Amount  <form:input type="number" path="paymentAmount" required="true" readonly="true"/>
                 </div>
                 <br>
                 <%-- <div>
@@ -36,7 +40,6 @@
                 <br> --%>
                 <div>
                 <input type="submit" value="Pay EMI" />
-                <input type="reset">
                 </div>
             </form:form>
         </div>

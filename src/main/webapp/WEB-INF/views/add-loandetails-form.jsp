@@ -6,17 +6,10 @@
 <html lang="en">
 <head>
 <meta charset="ISO-8859-1">
-<title>Adding Loan Details</title>
- <style>
-      div {
-        margin-bottom: 10px;
-      }
-      label {
-        display: inline-block;
-        width: 150px;
-        text-align: right;
-      }
-    </style>
+<title>Apply Loan Details</title>
+<style>
+<%@include file="css/loandetails-style.css"%>
+</style>
     <script type="text/javascript">
     function pendingEMI() {
     	var noOfEMIperMonth = document.getElementById("noOfEmis").value;
@@ -24,21 +17,27 @@
 		document.getElementById("noOfEmiPending").value = noOfPendingEMIperMonth;
 
 	}
+    function msg() {
+      alert("Your Loan Application Successfully Submitted...!");
+      alert("Stay Tuned for Bank response...!");
+    }
     </script>
 </head>
 <body>
- <h3>Customers Loan Applying form</h3>
+ 
         <div id="form">
+        <div class="container">
+        <h3>Customers Loan Applying form</h3>
             <form:form action="addloandetails" method="post" modelAttribute="addloandetails">
-                
+                <div class="form">
                 <div>
-              <div><label for="userId">User ID</label>
+              <div><label for="userId">User ID</label><br>
                <form:input path="userId" placeholder="enter User ID" pattern="[0-9]{4}"  title="user ID only contains Numbers" required="true"/>
                 </div>
                 </div>  
                 <br>
                 <div>
-                <div><label for="loanId">Loan ID</label>
+                <div><label for="loanId">Loan ID</label><br>
                 <form:input path="loanId" placeholder="enter Loan ID" required="true"  />
                 </div>
                  </div>
@@ -57,7 +56,7 @@
                  </div>
                 <br>
                    <div>
-                   <div><label for="noOfEmis">NO OF EMI's IN MONTH</label>
+                   <div><label for="noOfEmis">No of EMI's</label>
                 <form:select path="noOfEmis" id="noOfEmis" name="noOfEmis">
                     <form:option value="12" label="12 Months" required="true" />
                     <form:option value="24" label="24 Months" required="true" />
@@ -69,7 +68,7 @@
                 <br>
                 <div>
 				<div>
-					<label for="noOfEmiPending">No Of EMI's Pending</label>
+					<label for="noOfEmiPending">Pending EMI's</label>
 					<form:input type="number" path="noOfEmiPending" id="noOfEmiPending" name="noOfEmiPending" onclick="pendingEMI(this.form)"
 						placeholder="Enter no of emi's pending in month"  required="true" readonly="true" />
 				</div>
@@ -82,10 +81,14 @@
              </div>
              <br>
                 <div>
-                <input type="submit" value="Apply Loan Details" />
-                <input type="reset">
+                <button type="submit" value="Apply Loan Details" class="signupbtn" onclick="msg()">Apply Loan</button>
+                <br>
+                <br>
+                <button type="reset" class="cancelbtn">Reset</button>
+                </div>
                 </div>
             </form:form>
+        </div>
         </div>
 </body>
 </html>

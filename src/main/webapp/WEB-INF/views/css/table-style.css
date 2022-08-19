@@ -1,8 +1,9 @@
 @charset "ISO-8859-1";
 #loan1 {
   font-family: Arial, Helvetica, sans-serif;
+  font-size : 10px;
   border-collapse: collapse;
-  width: 100%;
+  width: 95%;
 }
 
 #loan2 td,  th {
@@ -10,20 +11,20 @@
   padding: 8px;
 }
 
-#loan tr:nth-child(even){background-color: #F3E3C3;}
+#loan tr:nth-child(even){background-color: #008040;}
 
 #loan tr:hover {background-color: #FF7082;}
 
 #loan th {
   padding-top: 12px;
-  padding-bottom: 12px;
+  padding-bottom: 6px;
   text-align: center;
   background-color: #800080;
   color: white;
 }
 table{
     text-align: center;
-    width: 90%;
+    width: 95;
 }
  
  table, th, td {

@@ -40,9 +40,6 @@ public class HomeController {
 	    public String homePageLoanManagement()
 	    {
 	    	return "loanmanagement-system-home";
-	    	//return "login-form";
-	    	// return "loan-customer-form2";
-	    	//return "admin-page-loanmanagement";
 	    }
 	    
 	    @GetMapping("/customerform")
@@ -50,7 +47,6 @@ public class HomeController {
 	    {	
 	    	model.addAttribute("userId", userId);
 	    	return "loan-customer-form2";
-	    	// return "customer-form";
 	    }
 	    
 	    @GetMapping("/adminpage")

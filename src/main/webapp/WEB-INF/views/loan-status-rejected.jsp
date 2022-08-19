@@ -69,6 +69,10 @@
 			</ul>
 		</nav>
 </div>
+
+<br>
+<br>
+<br>
 	<div id="table root">
 		<table id="loan">
 			<thead>
@@ -86,7 +90,7 @@
 					<th>EMI Amount </th>
 					<th>Total Amount</th>
 					<th>Loan Status</th>
-					<th>UPDATE</th>
+					
 				</tr>
 			</thead>
 			<tbody>
@@ -105,7 +109,7 @@
 						<td>${loandet.monthlyEMIAmount}</td>
 						<td>${loandet.totalAmount}</td>
 						<td>${loandet.loanStatus}</td>
-						<td><button onclick = "window.location.href='/loandetails/updateloandetailsform?userid=${loandet.userId}'">Update</button></td>
+						<%-- <td><button onclick = "window.location.href='/loandetails/updateloandetailsform?userid=${loandet.userId}'">Update</button></td> --%>
 					</tr>
 				</c:forEach>
 			</tbody>

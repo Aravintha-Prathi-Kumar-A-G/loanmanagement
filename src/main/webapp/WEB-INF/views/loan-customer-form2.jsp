@@ -25,7 +25,6 @@
                     <input type="checkbox" id="drop-1"/>
                     <ul>
                         <li><a href="/loan/addloanform?userId=${userId}">Add New Loan Request</a></li>
-                     <!--    <li><a href="/loandetails/addloandetailsform">Apply Loan</a></li> -->
                         <li><a href="/user/updateuserform?userId=${userId}">Update Customer Details</a></li>
                     </ul> 
 
