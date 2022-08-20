@@ -82,7 +82,7 @@ input::placeholder {
 	color: gray;
 }
 
-input {
+/* input {
 	background: #ecf0f3;
 	padding: 10px;
 	padding-left: 20px;
@@ -90,7 +90,7 @@ input {
 	font-size: 14px;
 	border-radius: 50px;
 	box-shadow: inset 6px 6px 6px #cbced1, inset -6px -6px 6px white;
-}
+} */
 
 button {
 	color: white;

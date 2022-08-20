@@ -49,7 +49,7 @@ public class LoanService {
 			Iterator<LoanDetails> itr = loanlist.iterator();
 			while(itr.hasNext())
 			{
-				dto.addLoanAndLoanDetailslist((LoanDetails)itr.next());
+				dto.addLoanAndLoanDetailslist(itr.next());
 			}
 			return dto;
 			
@@ -64,7 +64,7 @@ public class LoanService {
 	  			Iterator<LoanEMIdetails> itr = loanlist.iterator();
 	  			while(itr.hasNext())
 	  			{
-	  				dtoemi.addLoanAndLoanEmidetails((LoanEMIdetails)itr.next());
+	  				dtoemi.addLoanAndLoanEmidetails(itr.next());
 	  			}
 	  			return dtoemi;
 	  			
