@@ -40,6 +40,10 @@ public class UserDetailsService {
 	    public void deleteUserById(int id) {
 	    	userdetailsrepo.deleteById(id);
 	    }
+		
+	    public UserDetails findEmailIdAndPassword(String email,String password) {
+	        return userdetailsrepo.findByEmailAndPassword(email,password);
+	    }
 	    
 	public UserDetailsLoanDetailsDTO getUserDetailsLoanDetails (int id)
 	{

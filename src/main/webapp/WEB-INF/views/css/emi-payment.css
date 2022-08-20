@@ -21,7 +21,7 @@ body{
 	}
 @keyframes example {
 100%{
-    transform:translate3d(0px,0px,0px0px,);
+     width: 10px;
   }
  
 
@@ -88,7 +88,7 @@ body{
   }
 }
 
-label{box-shadow:9px 9px 25px black;
+label{box-shadow:9px 9px 25px #FBFCFC;
 background:green;
 color:white;
 padding:10px 50px 10px 50px;

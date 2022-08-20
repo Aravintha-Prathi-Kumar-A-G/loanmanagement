@@ -10,13 +10,12 @@
 }
 
 body {
-	margin: 0;
+	margin: auto;
 	padding: 0;
 	background: #E0C4FD;
 	font-family: 'Poppins', sans-serif;
 	overflow-x: hidden;
 	height: 100vh;
-	margin: auto;
 	display: flex;
 }
 

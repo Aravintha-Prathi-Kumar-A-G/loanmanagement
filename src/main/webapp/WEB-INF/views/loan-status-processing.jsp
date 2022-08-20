@@ -12,7 +12,7 @@
 <%@include file="css/table-style.css"%>
 </style>
 </head>
-<body style="background-color: #808080;">
+<body style="background-color: #5bb5c1;">
 <div>
 <nav>
 			<div id="logo">LOAN MANAGEMENT SYSTEM (Admin)</div>

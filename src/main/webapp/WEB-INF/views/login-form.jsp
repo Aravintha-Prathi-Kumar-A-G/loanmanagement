@@ -18,8 +18,8 @@
 			</header>
 			<br> <br>
 			<div class="inputs">
-				<input type="text" id="userID" name="userId" placeholder="User ID">
-				<input type="password" id="password" name="password" placeholder="password">
+				<input type="text" id="email" name="email" placeholder="Email ID">
+				<input type="password" id="password" name="password" placeholder="Password">
 
 			</div>
 			<br>

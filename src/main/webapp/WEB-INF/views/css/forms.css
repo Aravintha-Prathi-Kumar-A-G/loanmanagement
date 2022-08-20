@@ -84,7 +84,7 @@ td.buttons2{
 /*the container must be positioned relative:*/
 .custom-select {
   position: relative;
-  font-family: Arial;
+    font-family: Helvetica, Arial, Verdana, Tahoma, sans-serif;
 }
 
 .custom-select select {

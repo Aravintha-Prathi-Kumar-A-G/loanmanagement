@@ -10,6 +10,7 @@ public interface UserDetailsRepository extends CrudRepository <UserDetails,Integ
 	UserDetails save (UserDetails user);
 	void deleteById(int userId);
 	List <UserDetails> findAll();
+	UserDetails findByEmailAndPassword(String email,String password);
 }
 
 

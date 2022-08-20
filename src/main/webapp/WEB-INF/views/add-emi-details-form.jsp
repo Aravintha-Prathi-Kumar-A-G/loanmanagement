@@ -10,6 +10,12 @@
 <style>
 <%@include file="css/form-style2.css"%>
 </style>
+<script type="text/javascript">
+function msg() {
+    alert("Your Payment Successfull...!");
+    alert("welcome...!");
+  }
+</script>
 </head>
 <body>
  
@@ -39,7 +45,7 @@
                 </div>
                 <br> --%>
                 <div>
-                <input type="submit" value="Pay EMI" />
+                <input type="submit" value="Pay EMI" onclick="msg()" />
                 </div>
             </form:form>
         </div>

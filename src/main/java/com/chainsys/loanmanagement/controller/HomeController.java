@@ -58,8 +58,10 @@ public class HomeController {
 	    
 	    @PostMapping("/userpage")
 		public String userPage(@ModelAttribute("signin") SignIn signin, Model model) {
-			UserDetails userdetails = userdetailservice.findUserById(signin.getUserId());
+			UserDetails userdetails = userdetailservice.findEmailIdAndPassword(signin.getEmail(),signin.getPassword());
 			model.addAttribute("userId", userdetails.getUserId());
+			if (userdetails.getEmail().equals(signin.getEmail())) 
+			{
 			if (userdetails.getPassword().equals(signin.getPassword())) 
 			{
 				if (userdetails.getRole().equalsIgnoreCase("user")) 
@@ -74,9 +76,9 @@ public class HomeController {
 				model.addAttribute("message", "Somthing Wrong ");
 				return "login-form";
 			}
-			return "login-form";
-	    
-	    
+			
 	}
+			return "login-form";
+	    }		
 
 }
