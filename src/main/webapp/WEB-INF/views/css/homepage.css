@@ -20,6 +20,10 @@ body {
     position: fixed;
     line-height: 65px;
     text-align: center;
+     padding-top: 20px;
+    padding-bottom: 20px;
+    -webkit-transition: all 0.4s ease;
+    transition: all 0.4s ease;
 }
 
 .nav div.logo {
@@ -84,13 +88,6 @@ body {
 
 .navTrigger {
     display: none;
-}
-
-.nav {
-    padding-top: 20px;
-    padding-bottom: 20px;
-    -webkit-transition: all 0.4s ease;
-    transition: all 0.4s ease;
 }
 
 

@@ -54,7 +54,7 @@ public class UserDetailsService {
 		Iterator <LoanDetails> itr = loanlist.iterator();
 		while(itr.hasNext())
 		{
-			dto.addUserdetailsAndLoanlist((LoanDetails)itr.next());
+			dto.addUserdetailsAndLoanlist(itr.next());
 		}
 		return dto;
 		
@@ -69,7 +69,7 @@ public class UserDetailsService {
 				Iterator<LoanEMIdetails> itr = emidetails.iterator();
 				while(itr.hasNext())
 				{
-					dto.addUserDetailsAndLoanemidetails((LoanEMIdetails)itr.next());
+					dto.addUserDetailsAndLoanemidetails(itr.next());
 				}
 				return dto;
 				
