@@ -74,7 +74,7 @@ public class UserController {
    		model.addAttribute("getallusers", userslist);
    		return "get-all-users";
    	}
-       @RequestMapping("/userlogin")
+       @GetMapping("/userlogin")
        public String userLogin() {
     	   return "loginform";
        }
