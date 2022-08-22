@@ -1,188 +1,76 @@
 @charset "ISO-8859-1";
-$yellow: #fddb33;
-$black: #222;
-$white: #fff;
-.img-fluid {
-    max-width: 100%;
-    height: auto;
+*{
+    margin: 0;
+    padding: 0;
+    font-family: "Open Sans",sans-serif;
+    box-sizing: border-box;
 }
-body {
-    background: $yellow;
-    font-family: 'Nunito', sans-serif;
-    font-weight: 300;
-}
-.clear {
-    clear: both;
-}
-.container {
-    background: $white;
-    max-width: 920px;
-    height: 480px;
-    margin: auto;
-    transform: translateY(15%);
-    box-shadow: 0px 0px 6px 0px #22222273;
-    .circles {
-        position: absolute;
-        width: 100%;
-        height: 100%;
-        overflow: hidden;
-        &:before {
-            content: '';
-            position: absolute;
-            left: -6%;
-            top: -8%;
-            width: 200px;
-            height: 200px;
-            background: $yellow;
-            border-radius: 50%;
-        }
-        &:after {
-            content: '';
-            position: absolute;
-            right: -11%;
-            bottom: -15%;
-            width: 200px;
-            height: 200px;
-            background: #fddb33;
-            border-radius: 50%;
-        }
 
-    }
-    .details-container {
-        position: relative;
-        display: flex;
-        
-        .avatar {
-            margin: 10px auto;
-            position: relative;
-            float: left;
-            padding: 20px;
-            animation: 1s ease-out 0s 1 slideInFromLeft;
-            img {
-                max-width: 240px;
-                margin-top: -70px;
-                border: 10px solid $white;
-                box-shadow: 0px 0px 6px 0px #22222273;
-            }
-        }
-        .about {
-            float: right;
-            padding: 20px;
-            margin-top: 50px;
-            animation: 1s ease-out 0s 1 slideUpFromBottom;
-            .name {
-                p {
-                    margin: 0;
-                    color: $black;
-                    font-size: 1.1em;
-                    font-weight: bold;
-                }
-                h1 {
-                    color: $yellow;
-                    font-weight: bold;
-                    margin:0;
-                    font-size: 3em;
-                }
-            }
-            .about-content {
-                p {
-                    line-height: 1.6em;
-                }
-                button {
-                    border: none;
-                    color: $black;
-                    padding: 10px;
-                    background: $yellow;
-                    cursor: pointer;
-                    font-weight: bold;
-                    width: 250px;
-                    height: 40px;
-                    font-family: 'Nunito', sans-serif;
-                    box-shadow: 1px 1px 10px 0px #2222222b;
-                    transition: .2s all;
-                    &:hover {
-                        box-shadow: 1px 1px 1px 0px #2222222b;
-                    }
-                    &:focus, &:active {
-                        outline: 0;
-                        box-shadow: 1px 1px 10px 0px #22222280;
-                    }
-                }
-            }
-        }
-    }
-    .skills-container {
-        display: flex;
-        justify-content: space-between;
-        padding: 20px;
-        position: relative;
-        z-index:1;
-        animation: 1s ease-in 0s 1 fadeIn;
-        button {
-            flex: 1;
-            padding: 10px;
-            margin: 5px;
-            border: none;
-                color: $black;
-                padding: 10px;
-                background: $yellow;
-                cursor: pointer;
-                font-weight: bold;
-                width: 250px;
-                height: 40px;
-                font-family: 'Nunito', sans-serif;
-                box-shadow: 1px 1px 10px 0px #2222222b;
-                transition: .2s all;
-                &:hover {
-                    box-shadow: 1px 1px 1px 0px #2222222b;
-                }
-                &:focus, &:active {
-                    outline: 0;
-                    box-shadow: 1px 1px 10px 0px #22222280;
-                }
-        }
-    }
-    @media only screen and (max-width: 766px){
-        height: auto;
-        .details-container {
-            flex-direction: column;
-            
-            .avatar  {
-                img {
-                    width: 300px;
-                }
-            }
-            .about {
-                margin-top: 10px;
-            }
-        }
+body{
+    min-height: 100vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background-color: #f1f1f1;
+}
+
+.about-section{
+    background: url(https://fadzrinmadu.github.io/hosted-assets/responsive-about-us-section-using-html/pic.jpg) no-repeat left;
+    background-size: 55%;
+    background-color: #fdfdfd;
+    overflow: hidden;
+    padding: 100px 0;
+}
+
+.inner-container{
+    width: 55%;
+    float: right;
+    background-color: #fdfdfd;
+    padding: 150px;
+}
+
+.inner-container h1{
+    margin-bottom: 30px;
+    font-size: 30px;
+    font-weight: 900;
+}
+
+.text{
+    font-size: 13px;
+    color: #545454;
+    line-height: 30px;
+    text-align: justify;
+    margin-bottom: 40px;
+}
+
+.skills{
+    display: flex;
+    justify-content: space-between;
+    font-weight: 700;
+    font-size: 13px;
+}
+
+@media screen and (max-width:1200px){
+    .inner-container{
+        padding: 80px;
     }
 }
-@keyframes slideInFromLeft {
-    0% {
-      transform: translateX(-100%);
-      opacity: 0;
+
+@media screen and (max-width:1000px){
+    .about-section{
+        background-size: 100%;
+        padding: 100px 40px;
     }
-    100% {
-      transform: translateX(0);
-      opacity: 1;
+    .inner-container{
+        width: 100%;
     }
-  }
-  @keyframes slideUpFromBottom {
-    0% {
-      transform: translateY(70%);
-      opacity: 0;
+}
+
+@media screen and (max-width:600px){
+    .about-section{
+        padding: 0;
     }
-    100% {
-      transform: translateX(0);
-      opacity: 1;
+    .inner-container{
+        padding: 60px;
     }
-  }
-  @keyframes fadeIn {
-    0% {
-      opacity: 0;
-    }
-    100% {
-      opacity: 1;
-    }
-  }
+}

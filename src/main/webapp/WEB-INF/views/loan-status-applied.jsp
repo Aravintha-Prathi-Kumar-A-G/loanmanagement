@@ -65,6 +65,7 @@
 					</ul>
 				</li>
 				<li><a href="/home/loanmanagementhomepage">Sign Out</a></li>
+				  <li><a href="/home/about">About</a></li>
 			</ul>
 		</nav>
 </div>

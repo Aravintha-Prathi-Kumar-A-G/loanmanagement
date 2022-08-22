@@ -56,6 +56,13 @@ public class HomeController {
 	    	return "admin-page-loanmanagement";
 	    }
 	    
+	    @GetMapping("/about")
+	    public String aboutUs()
+	    {
+	    	return "about";
+	    }
+	    
+	    
 	    @PostMapping("/userpage")
 		public String userPage(@ModelAttribute("signin") SignIn signin, Model model) {
 			UserDetails userdetails = userdetailservice.findEmailIdAndPassword(signin.getEmail(),signin.getPassword());

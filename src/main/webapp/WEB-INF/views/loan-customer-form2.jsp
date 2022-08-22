@@ -48,6 +48,7 @@
                 </li>
                 <li><a href="/emi/addemidetailsform?id=${userId}">Pay EMI</a></li>
                 <li><a href="/home/loanmanagementhomepage">Sign Out</a></li>
+                <li><a href="/home/about">About</a></li>
             </ul>
         </nav>
 </div>

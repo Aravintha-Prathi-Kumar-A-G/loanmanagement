@@ -42,7 +42,7 @@ $('.navTrigger').click(function () {
                     <li><a href="/home/loanmanagementhomepage">Home</a></li>
                     <li><a href="/home/signin">Sign In</a></li>
                     <li><a href="/user/adduserform">Sign Up</a></li>
-                     <li><a href="/user/adduserform">About</a></li>
+                     <li><a href="/home/about">About</a></li>
                 </ul>
             </div>
         

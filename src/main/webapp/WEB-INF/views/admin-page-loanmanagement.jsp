@@ -71,7 +71,7 @@ background-image: url("https://www.graphen.ai/products/img/loan1.jpeg");
 					</ul>
 				</li>
 				<li><a href="/home/loanmanagementhomepage">Sign Out</a></li>
-				<li><a href="#">About</a></li>
+				<li><a href="/home/about">About</a></li>
 			</ul>
 		</nav>
 	</div>
