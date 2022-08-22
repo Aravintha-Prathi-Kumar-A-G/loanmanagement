@@ -9,9 +9,11 @@
 <title>Add New Loan Request</title>
 <style>
 <%@include file="css/loanrequest.css"%>
+<%@include file="css/button.css"%>
 </style>
 </head>
 <body>
+<button class="button" onclick="history.back()">Go Back</button>
 		<div id="form">
 		<div class="container">
 			<h3>Loan Request</h3>

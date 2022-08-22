@@ -68,7 +68,8 @@ public class HomeController {
 				{	int id=userdetails.getUserId();
 					return "redirect:/home/customerform?userId="+id;
 
-				} else if (userdetails.getRole().equalsIgnoreCase("admin")) {
+				} 
+				else if (userdetails.getRole().equalsIgnoreCase("admin")) {
 					int id=userdetails.getUserId();
 					return "redirect:/home/adminpage?userId="+id;
 				}

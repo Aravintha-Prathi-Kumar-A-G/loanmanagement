@@ -9,12 +9,14 @@
 <title>Get All Users List</title>
 <style>
 <%@include file="css/table-style.css"%>
+<%@include file="css/button.css"%>
 </style>
 </head>
 <body style="background-color:#5bb5c1;">
-<h1>List All Users</h1>
+<button class="button" onclick="history.back()">Go Back</button>
+<h2>List All Users</h2>
 	<div id="table root">
-		<table id="loan"><caption></caption>
+		<table id="loan" class="center"><caption></caption>
 			<thead>
 				<tr>
 					<th scope="col">User ID</th>
@@ -23,7 +25,7 @@
 					<th scope="col">Age</th>
 					<th scope="col">Date Of Birth</th>
 					<th scope="col">Phone Number</th>
-					<th scope="col">Pancard Number</th>
+					<th scope="col">Pan </th>
 					<th scope="col">Account Number</th>
 					<th scope="col">Email</th>
 					<th scope="col">Address</th>

@@ -9,12 +9,14 @@
 <title>Get All Loan</title>
 <style>
 <%@include file="css/table-style.css"%>
+<%@include file="css/button.css"%>
 </style>
 </head>
 <body style="background-color: #5bb5c1;">
-<h1>List All Loans</h1>
+<button class="button" onclick="history.back()">Go Back</button>
+<h2>List All Loans</h2>
 	<div id="table root">
-		<table id="loan"><caption></caption>
+		<table id="loan" class="center"><caption></caption>
 			<thead>
 				<tr>
 					<th scope="col">User ID</th>

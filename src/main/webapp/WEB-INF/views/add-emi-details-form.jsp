@@ -9,6 +9,8 @@
 <title>Add EMI Details Form</title>
 <style>
 <%@include file="css/form-style2.css"%>
+<%@include file="css/button.css"%>
+
 </style>
 <script type="text/javascript">
 function msg() {
@@ -18,7 +20,7 @@ function msg() {
 </script>
 </head>
 <body>
- 
+ <button class="button" onclick="history.back()">Go Back</button>
     <div id="registration-form" class="center">
         <div id="form" class='fieldset'>
             <form:form action="addemidetails" method="post" modelAttribute="addemidetails">

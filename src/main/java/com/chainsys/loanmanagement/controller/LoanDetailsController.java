@@ -34,7 +34,8 @@ public class LoanDetailsController {
 	@PostMapping("/addloandetails")
 	public String addNewLoanDetails(@ModelAttribute("addloandetails") LoanDetails loandetails) {
 		loandetservice.saveLoanDetails(loandetails);
-		return "successfully-applied";
+		int id=loandetails.getUserId();
+		return "redirect:/home/customerform?userId="+id;
 	}
 	
 	@GetMapping("/adminupdateloandetails")

@@ -10,6 +10,7 @@
 <title>Update user form</title>
 <style>
 <%@include file ="css/forms.css"%>
+<%@include file="css/button.css"%>
 </style>
 <script type="text/javascript">
 function ageCount() {
@@ -32,13 +33,19 @@ function ageCount() {
      document.getElementById("age").value = age;          
     }
 }
+function msg()
+{
+	 alert("User Details Updated Successfully...!");
+	    alert("Login Again...!");
+}
 </script>
 </head>
 <body style="background-color:#CCFFFF;" >
+<button class="button" onclick="history.back()">Go Back</button>
 <h1>Update User Details</h1>
 <br>
         <div id="form">
-            <form:form action="adduserdetails" method="post" modelAttribute="updateuser">
+            <form:form action="updateuser" method="post" modelAttribute="updateuser">
                 <table class ="center"><caption></caption>
                 <tr>
                 <th scope="col">User ID </th>
@@ -91,11 +98,11 @@ function ageCount() {
                  <th scope="col">Pincode   </th>
                 <td> <form:input path="pincode" name="pincode number"  placeholder="enter your pincode" pattern="[0-9]{6}" title="enter your valid pincode number"  required="true"/></td>
                 </tr>
-			<%--   <tr>
+			 <%--  <tr>
                <th scope="col"> Role  </th>
-                <td> <form:radiobutton path="role" value="User"  required="true" readonly="true"/>User
-                         <form:radiobutton path="role" value="Admin"  required="true" readonly="true"/>Admin </td>
-                </tr> --%>
+                <td> <form:radiobutton path="role" value="User" readonly="true" />User
+                         <form:radiobutton path="role" value="Admin" readonly="true" />Admin </td>
+                </tr>  --%>
               <tr>
 					<th scope="col">User Password </th>
 					<td><form:password path="password" name="password"
@@ -108,7 +115,7 @@ function ageCount() {
 				<table ><caption></caption>
 				<tr><th ></th>
 					<td><button type="reset" class="cancelbtn">Reset</button>
-						<button type="submit" class="signupbtn">Update</button></td>
+						<button type="submit" class="signupbtn" onclick="msg()" >Update</button></td>
 				</tr>
 			</table>
 			</div>

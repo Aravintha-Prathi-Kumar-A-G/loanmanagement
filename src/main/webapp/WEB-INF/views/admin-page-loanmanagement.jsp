@@ -26,7 +26,7 @@ background-image: url("https://www.graphen.ai/products/img/loan1.jpeg");
 			<label for="drop" class="toggle">Menu</label> <input type="checkbox"
 				id="drop" />
 			<ul class="menu">
-				<li><a href="/home/loanmanagementhomepage">Home</a></li>
+				<li><a href="/home/adminpage?userId=${userId}">Home</a></li>
 				<li>
 					<!-- First Tier Drop Down --> <label for="drop-1" class="toggle">Update
 						+</label> <a href="#">Update</a> <input type="checkbox" id="drop-1" />

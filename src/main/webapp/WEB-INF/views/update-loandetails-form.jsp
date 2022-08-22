@@ -9,6 +9,7 @@
 <title>Update Loan Details</title>
 <style>
 <%@include file="css/update-loandetails.css"%>
+<%@include file="css/button.css"%>
 </style>
 <script type="text/javascript">
 	function emiCalculation() {
@@ -36,6 +37,7 @@
     </script>
 </head>
 <body>
+<button class="button" onclick="history.back()">Go Back</button>
 	<div id="form">
 	<div class="container">
 		<form:form action="updateloandetails" method="post"

@@ -9,6 +9,7 @@
 <title>Apply Loan Details</title>
 <style>
 <%@include file="css/loandetails-style.css"%>
+<%@include file="css/button.css"%>
 </style>
     <script type="text/javascript">
     function pendingEMI() {
@@ -24,7 +25,7 @@
     </script>
 </head>
 <body>
- 
+ <button class="button" onclick="history.back()">Go Back</button>
         <div id="form">
         <div class="container">
         <h3>Customers Loan Applying form</h3>

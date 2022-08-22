@@ -8,9 +8,11 @@
 <title> update LOAN TYPE details</title>
 <style>
 <%@include file="css/findbyid.css"%>
+<%@include file="css/button.css"%>
 </style>
 </head>
 <body>
+<button class="button" onclick="history.back()">Go Back</button>
             <form action="/loan/updateloan" method="get">
 		<div class="container">
 			<div class="brand-title">Update Loan Type</div>

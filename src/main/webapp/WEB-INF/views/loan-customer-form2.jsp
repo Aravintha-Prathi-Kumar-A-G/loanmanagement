@@ -10,6 +10,8 @@
 </style>
 </head>
 <body>
+
+ <!-- nav bar -->
 <div>
  <nav>
         <div id="logo">LOAN MANAGEMENT SYSTEM</div>
@@ -17,7 +19,7 @@
         <label for="drop" class="toggle">Menu</label>
         <input type="checkbox" id="drop" />
             <ul class="menu">
-                <li><a href="/home/loanmanagementhomepage">Home</a></li>
+                <li><a href="/home/customerform?userId=${userId}">Home</a></li>
                 <li>
                     <!-- First Tier Drop Down -->
                     <label for="drop-1" class="toggle">Loan +</label>
@@ -45,8 +47,7 @@
                 </ul>
                 </li>
                 <li><a href="/emi/addemidetailsform?id=${userId}">Pay EMI</a></li>
-                <li><a href="#">Sign Out</a></li>
-                <li><a href="#">About</a></li>
+                <li><a href="/home/loanmanagementhomepage">Sign Out</a></li>
             </ul>
         </nav>
 </div>

@@ -34,7 +34,7 @@ public class UserController {
 	public String addNewUsers(@ModelAttribute("adduser") UserDetails user1)
 	{
 		userservice.saveUser(user1);
-		return "redirect:/user/getallusers";
+		return "redirect:/home/loanmanagementhomepage";
 	}
 	
 	 @GetMapping("/updateuserdetails")
@@ -54,7 +54,7 @@ public class UserController {
     @PostMapping("/updateuser")
 	public String updateuser(@ModelAttribute("updateuser") UserDetails userid) {
     	userservice.saveUser(userid);
-		return "redirect:/user/getallusers";
+		return "redirect:/home/loanmanagementhomepage";
 	}
     @GetMapping("/deleteuserbyid")
    	public String deleteuser(@RequestParam("userid") int id) {

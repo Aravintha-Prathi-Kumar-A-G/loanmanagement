@@ -30,6 +30,11 @@
 			//display the calculated age
 			document.getElementById("age").value = age;
 		}
+		function msg()
+		{
+			alert(" Registration Completed...!");
+		    alert("....Login with Email Id And Password...");
+		}
 	}
 </script>
 </head>
@@ -130,7 +135,7 @@
 				<table ><caption></caption>
 				<tr><th ></th>
 					<td><button type="reset" class="cancelbtn">Reset</button>
-						<button type="submit" class="signupbtn">Submit</button></td>
+						<button type="submit" class="signupbtn" onclick="msg()">Submit</button></td>
 				</tr>
 			</table>
 			</div>

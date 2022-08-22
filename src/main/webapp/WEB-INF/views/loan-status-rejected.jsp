@@ -10,6 +10,7 @@
 <style type="text/css">
 <%@include file="css/admin-navbar.css"%>
 <%@include file="css/table-style.css"%>
+<%@include file="css/button.css"%>
 </style>
 </head>
 <body style="background-color: #5bb5c1;">
@@ -20,14 +21,13 @@
 			<label for="drop" class="toggle">Menu</label> <input type="checkbox"
 				id="drop" />
 			<ul class="menu">
-				<li><a href="/home/loanmanagementhomepage">Home</a></li>
+				<li><a href="/home/adminpage?userId=${userId}">Home</a></li>
 				<li>
 					<!-- First Tier Drop Down --> <label for="drop-1" class="toggle">Update
 						+</label> <a href="#">Update</a> <input type="checkbox" id="drop-1" />
 					<ul>
 						<li><a href="/loandetails/adminupdateloandetails">Update Loan Details</a></li>
 						<li><a href="/loan/adminupdateloan">Update Loan Type</a></li>
-						<li><a href="/user/updateuserdetails">Update Admin Details</a></li>
 					</ul>
 
 				</li>
@@ -64,32 +64,32 @@
 						</li>
 					</ul>
 				</li>
-				<li><a href="/home/loanmanagementhomepage"">Sign Out</a></li>
-				<li><a href="#">About</a></li>
+				<li><a href="/home/loanmanagementhomepage">Sign Out</a></li>
 			</ul>
 		</nav>
 </div>
 
 <br>
+<button class="button" onclick="history.back()">Go Back</button>
 <br>
 <br>
 	<div id="table root">
-		<table id="loan">
+		<table id="loan"><caption></caption>
 			<thead>
 				<tr>
-				    <th>User ID</th>
-					<th>Loan ID</th>
-					<th>Loan Date</th>
-					<th>Loan Amount</th>
-					<th>No of EMI's</th>
-					<th>Due Date</th>
-					<th>Paid Date</th>
-					<th>Paid EMI</th>
-					<th>Pending EMI</th>
-					<th>Interest</th>
-					<th>EMI Amount </th>
-					<th>Total Amount</th>
-					<th>Loan Status</th>
+				    <th scope="col">User ID</th>
+					<th scope="col">Loan ID</th>
+					<th scope="col">Loan Date</th>
+					<th scope="col">Loan Amount</th>
+					<th scope="col">No of EMI's</th>
+					<th scope="col">Due Date</th>
+					<th scope="col">Paid Date</th>
+					<th scope="col">Paid EMI</th>
+					<th scope="col">Pending EMI</th>
+					<th scope="col">Interest</th>
+					<th scope="col">EMI Amount </th>
+					<th scope="col">Total Amount</th>
+					<th scope="col">Loan Status</th>
 					
 				</tr>
 			</thead>

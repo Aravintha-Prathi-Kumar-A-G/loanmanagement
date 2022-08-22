@@ -8,9 +8,11 @@
 <title>VIEW LOAN DETAILS AND USER DETAILS</title>
 <style>
 <%@include file="css/findbyid.css"%>
+<%@include file="css/button.css"%>
 </style>
 </head>
 <body>
+<button class="button" onclick="history.back()">Go Back</button>
             	<form action="/user/getloandetailsbyuserid" method="get">
 		<div class="container">
 			<div class="brand-title">User & Loan Details</div>

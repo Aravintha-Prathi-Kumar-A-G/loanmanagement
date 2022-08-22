@@ -13,7 +13,8 @@
 </head>
 <body style="background-color: #5bb5c1;">
 	<div id="table root">
-		<table id="loan"><caption></caption>
+	<h2>List All EMI Details</h2>
+		<table id="loan" class="center"><caption></caption>
 			<thead>
 				<tr>
 					<th scope="col">User ID</th>

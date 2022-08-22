@@ -10,6 +10,7 @@
 <style type="text/css">
 <%@include file="css/admin-navbar.css"%>
 <%@include file="css/table-style.css"%>
+<%@include file="css/button.css"%>
 </style>
 </head>
 <body style="background-color: #5bb5c1;">
@@ -20,14 +21,13 @@
 			<label for="drop" class="toggle">Menu</label> <input type="checkbox"
 				id="drop" />
 			<ul class="menu">
-				<li><a href="/home/loanmanagementhomepage">Home</a></li>
+				<li><a href="/home/adminpage?userId=${userId}">Home</a></li>
 				<li>
 					<!-- First Tier Drop Down --> <label for="drop-1" class="toggle">Update
 						+</label> <a href="#">Update</a> <input type="checkbox" id="drop-1" />
 					<ul>
 						<li><a href="/loandetails/adminupdateloandetails">Update Loan Details</a></li>
 						<li><a href="/loan/adminupdateloan">Update Loan Type</a></li>
-						<li><a href="/user/updateuserdetails">Update Admin Details</a></li>
 					</ul>
 
 				</li>
@@ -65,11 +65,11 @@
 					</ul>
 				</li>
 				<li><a href="/home/loanmanagementhomepage">Sign Out</a></li>
-				<li><a href="#">About</a></li>
 			</ul>
 		</nav>
 </div>
 <br>
+<button class="button" onclick="history.back()">Go Back</button>
 <br>
 <br>
 	<div id="table root">
