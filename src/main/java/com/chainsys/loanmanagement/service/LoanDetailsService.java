@@ -15,8 +15,7 @@ import com.chainsys.loanmanagement.repository.LoanDetailsRepository;
 	 private LoanDetailsRepository  loandetailsrepo;
 	   
 	 public List<LoanDetails> getloanDetails() {
-	        List<LoanDetails> loandetailsList = loandetailsrepo.findAll();
-	        return loandetailsList;
+	        return  loandetailsrepo.findAll();
 	    }
 	    public LoanDetails saveLoanDetails(LoanDetails loandetails) {
 	    	loandetails.setLoanDate(Logic.getInstanceDate());

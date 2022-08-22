@@ -16,8 +16,7 @@ public class LoanEMIService {
 	 @Autowired
 		private LoanDetailsService loanDetailsService;
 	 public List<LoanEMIdetails> getEmiDetails() {
-	        List<LoanEMIdetails> loanemiList = loanemi.findAll();
-	        return loanemiList;
+	        return loanemi.findAll();
 	    }
 	    public LoanEMIdetails saveEmi(LoanEMIdetails loanemidetails) {
 	    	LoanEMIdetails emI=loanemi.save(loanemidetails);

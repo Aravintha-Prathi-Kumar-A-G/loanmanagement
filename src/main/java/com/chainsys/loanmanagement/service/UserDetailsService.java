@@ -27,8 +27,7 @@ public class UserDetailsService {
 	 private LoanEMIdetailsRepository loanemidetailsrepository;
 	   
 	 public List<UserDetails> getUsersDetails() {
-	        List<UserDetails> userList = userdetailsrepo.findAll();
-	        return userList;
+	        return userdetailsrepo.findAll();
 	    }
 	    public UserDetails saveUser(UserDetails userdetail) {
 	        return userdetailsrepo.save(userdetail);

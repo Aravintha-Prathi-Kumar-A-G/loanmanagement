@@ -26,8 +26,7 @@ public class LoanService {
 	 private LoanEMIdetailsRepository emidetailsrepository;
 	   
 	 public List<Loan> getAllLoan() {
-	        List<Loan> loanList =loanrepo.findAll();
-	        return loanList;
+	        return loanrepo.findAll();
 	    }
 	    public Loan saveLoan(Loan loan) {
 	        return loanrepo.save(loan);

@@ -7,6 +7,11 @@ import java.time.LocalDate;
 import java.util.Calendar;
 
 public class Logic {
+	
+	private Logic()
+	{
+	}
+	
 	public static long balanceEmIAmount(long totalAmount,long paidEmI) {
 		return totalAmount-paidEmI;
 	}

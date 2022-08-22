@@ -16,6 +16,10 @@ import com.chainsys.loanmanagement.service.UserDetailsService;
 @Controller
 @RequestMapping("/home")
 public class HomeController {
+	
+	public static final String LOGIN = "login-form";
+	public static final String USERID ="userId";
+	
 	@Autowired
 	private UserDetailsService userdetailservice;
 
@@ -23,7 +27,7 @@ public class HomeController {
 	public String signInPage(Model model) {
 		SignIn signin = new SignIn();
 		model.addAttribute("signin", signin);
-		return "login-form";
+		return "LOGIN";
 	}
 
 	@GetMapping("/newuserregistration")
@@ -45,14 +49,14 @@ public class HomeController {
 	    @GetMapping("/customerform")
 	    public String customerPage(@RequestParam("userId") int userId,Model model)
 	    {	
-	    	model.addAttribute("userId", userId);
+	    	model.addAttribute("USERID", userId);
 	    	return "loan-customer-form2";
 	    }
 	    
 	    @GetMapping("/adminpage")
 	    public String adminPage(@RequestParam("userId")int userId,Model model)
 	    {
-	    	model.addAttribute("userId",userId);
+	    	model.addAttribute("USERID",userId);
 	    	return "admin-page-loanmanagement";
 	    }
 	    
@@ -66,7 +70,7 @@ public class HomeController {
 	    @PostMapping("/userpage")
 		public String userPage(@ModelAttribute("signin") SignIn signin, Model model) {
 			UserDetails userdetails = userdetailservice.findEmailIdAndPassword(signin.getEmail(),signin.getPassword());
-			model.addAttribute("userId", userdetails.getUserId());
+			model.addAttribute("USERID", userdetails.getUserId());
 			if (userdetails.getEmail().equals(signin.getEmail())) 
 			{
 			if (userdetails.getPassword().equals(signin.getPassword())) 
@@ -82,11 +86,11 @@ public class HomeController {
 				}
 			} else {
 				model.addAttribute("message", "Somthing Wrong ");
-				return "login-form";
+				return "LOGIN";
 			}
 			
 	}
-			return "login-form";
+			return "LOGIN";
 	    }		
 
 }
