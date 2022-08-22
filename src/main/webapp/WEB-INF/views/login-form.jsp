@@ -22,14 +22,14 @@
 				<input type="password" id="password" name="password" placeholder="Password">
 
 			</div>
-			<br>
+			
 			<br>
 					<button>Sign In</button>
-
 		</form>
-
 		<footer>
-			
+			<div>
+                <div style="color: red;">${message}</div>
+            </div>
 			<p>
 				Don't have an account? <a href="/user/adduserform">Sign Up</a>
 			</p>
